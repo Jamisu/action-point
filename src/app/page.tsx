@@ -1,7 +1,9 @@
-export default function Home() {
+import Home from '@/sections/Home'
+
+export default function App() {
   return (
-    <main>
-      <h1>Action Point — coming soon</h1>
+    <main className="bg-[#0a0e1a] min-h-screen">
+      <Home />
     </main>
   )
 }
