@@ -62,12 +62,12 @@ export default function Home() {
 
         {/* CTA BUTTONS */}
         <div
-          className="flex gap-4 flex-wrap"
-  style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
+          className="flex gap-4 flex-wrap justify-center opacity-0"
+        style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
         >
           <Link
             href="#projects"
-            className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[#4f9cf9] text-[#0a0e1a] font-bold rounded hover:bg-white transition-colors"
+            className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[#4f9cf9] text-[#0a0e1a] font-bold rounded hover:bg-white transition-colors focus:outline-none"
           >
             View Projects
           </Link>
