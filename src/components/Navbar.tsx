@@ -20,7 +20,7 @@ export default function Navbar() {
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
         if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsOpen(false)
+            setIsOpen(false)
         }
     }
 
