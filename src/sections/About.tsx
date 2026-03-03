@@ -17,6 +17,12 @@ function TypeWriter({ text, speed = 30, className }: TypeWriterProps) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
+    // Reset when text changes
+    setDisplayed('')
+    setIndex(0)
+  }, [text])
+
+  useEffect(() => {
     if (index >= text.length) return
 
     const timer = setTimeout(() => {
@@ -25,7 +31,7 @@ function TypeWriter({ text, speed = 30, className }: TypeWriterProps) {
     }, speed)
 
     return () => clearTimeout(timer)
-  }, [index])
+  }, [index, speed, text])
 
   return (
     <p className={className}>
@@ -45,7 +51,7 @@ export default function About() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true)
+        setIsVisible(entry.isIntersecting)
       },
       { threshold: 0.3 }
     )
