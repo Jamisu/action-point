@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center px-6 pt-16"
+      className="min-h-screen flex flex-col justify-center items-center px-6 pt-16 bg-gradient-to-b from-[#0a0e1a] to-[#0f1e35]"//261F34 150D26
     >
       <div className="max-w-4xl mx-auto w-full flex flex-col gap-6 text-center">
 
@@ -63,7 +63,7 @@ export default function Home() {
         {/* CTA BUTTONS */}
         <div
           className="flex gap-4 flex-wrap justify-center opacity-0"
-        style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
+          style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
         >
           <Link
             href="#projects"

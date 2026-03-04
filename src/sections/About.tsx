@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 
-// Lines to display in the about section header
 const aboutText = "Front-end engineer, 13+ years. Flash to React to Next.js — I've survived every paradigm shift and came out sharper. I build fast, think in systems, and actually understand users — psychology degree, not just a buzzword. If you need someone who codes with precision and thinks beyond the ticket, we should talk."
 
 interface TypeWriterProps {
@@ -17,7 +16,6 @@ function TypeWriter({ text, speed = 30, className }: TypeWriterProps) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    // Reset when text changes
     setDisplayed('')
     setIndex(0)
   }, [text])
@@ -65,7 +63,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center px-6 py-24"
+      className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
     >
       <div className="max-w-4xl mx-auto w-full flex flex-col gap-8">
 
