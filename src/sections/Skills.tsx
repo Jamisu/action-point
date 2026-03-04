@@ -7,24 +7,7 @@ import {
   SiOpenid,
   SiThreedotjs,
 } from '@icons-pack/react-simple-icons'
-
-// ─── TYPES ───────────────────────────────────────────────────────────────────
-
-interface Skill {
-  name: string
-  tooltip?: string
-  type: 'devicon' | 'simple' | 'text'
-  icon?: string       // devicon class suffix e.g. "react"
-  SimpleIcon?: React.ComponentType<{ size?: number; color?: string }>
-  color?: string
-}
-
-interface SkillGroup {
-  label: string
-  skills: Skill[]
-  legacy?: boolean
-  emerging?: boolean
-}
+import {Skill, SkillGroup, Groups} from '@/components/SkillCard'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
