@@ -31,8 +31,8 @@ export default function Navbar() {
 
   return (
     <div ref={menuRef}>
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0e1a] border-b border-[#1f2d45]">
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0a0e1a]/80 to-transparent backdrop-blur-sm border-b-2 border-[#1f2d45]">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
 
             {/* LOGO */}
             <Link
