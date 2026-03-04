@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import Tooltip from '@/components/ui/Tooltip'
+import { useRef } from 'react'
+import { useTooltip } from '@/components/ui/TooltipContext'
 
 // ─── TYPES ───────────────────────────────────────────────────────────────────
 
@@ -21,7 +21,7 @@ export interface SkillGroup {
   emerging?: boolean
 }
 
-// ─── SKILL CARD COMPONENT ────────────────────────────────────────────────────
+// ─── COMPONENT ───────────────────────────────────────────────────────────────
 
 interface SkillCardProps {
   skill: Skill
@@ -34,56 +34,60 @@ export default function SkillCard({
   skill,
   legacy,
   emerging,
-  tooltipPosition = 'top',
+  tooltipPosition = 'bottom',
 }: SkillCardProps) {
-  const [hovered, setHovered] = useState(false)
+  const { show, hide } = useTooltip()
+  const ref = useRef<HTMLDivElement>(null)
   const label = skill.tooltip ?? skill.name
   const iconColor = legacy ? '#64748b' : '#fbbf24'
 
+  function handleMouseEnter() {
+    if (!ref.current) return
+    show(label, ref.current.getBoundingClientRect(), { position: tooltipPosition })
+  }
+
   return (
-    <Tooltip text={label} position={tooltipPosition}>
-      <div
-        className={`
-          relative flex items-center justify-center
-          w-24 h-24 rounded-xl border transition-all duration-300 cursor-default
-          ${legacy
-            ? 'border-[#1f2d45]/50 bg-[#0a0e1a]/40'
-            : emerging
-            ? 'border-[#fbbf24]/20 bg-[#0f1e35]/60 hover:border-[#fbbf24]/60 hover:bg-[#0f1e35]'
-            : 'border-[#1f2d45] bg-[#0a0e1a]/60 hover:border-[#fbbf24]/40 hover:bg-[#0f1e35]/80'
-          }
-          ${hovered ? 'scale-105 shadow-lg shadow-[#fbbf24]/10' : ''}
-        `}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {skill.type === 'devicon' && (
-          <i
-            className={`devicon-${skill.icon}-plain text-4xl`}
-            style={{ color: iconColor }}
-          />
-        )}
+    <div
+      ref={ref}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={hide}
+      className={`
+        relative flex items-center justify-center
+        w-24 h-24 rounded-xl border transition-all duration-300 cursor-default
+        hover:scale-105
+        ${legacy
+          ? 'border-[#1f2d45]/50 bg-[#0a0e1a]/40 hover:shadow-[#64748b]/10'
+          : emerging
+          ? 'border-[#fbbf24]/20 bg-[#0f1e35]/60 hover:border-[#fbbf24]/60 hover:bg-[#0f1e35] hover:shadow-lg hover:shadow-[#fbbf24]/10'
+          : 'border-[#1f2d45] bg-[#0a0e1a]/60 hover:border-[#fbbf24]/40 hover:bg-[#0f1e35]/80 hover:shadow-lg hover:shadow-[#fbbf24]/10'
+        }
+      `}
+    >
+      {skill.type === 'devicon' && (
+        <i
+          className={`devicon-${skill.icon}-plain text-4xl`}
+          style={{ color: iconColor }}
+        />
+      )}
 
-        {skill.type === 'simple' && skill.SimpleIcon && (
-          <skill.SimpleIcon size={34} color={iconColor} />
-        )}
+      {skill.type === 'simple' && skill.SimpleIcon && (
+        <skill.SimpleIcon size={34} color={iconColor} />
+      )}
 
-        {skill.type === 'text' && (
-          <span
-            className="font-mono text-center leading-tight px-2 py-1 rounded border border-[#fbbf24]/30 text-[#fbbf24]"
-            style={{ fontSize: '9px' }}
-          >
-            {skill.name}
-          </span>
-        )}
+      {skill.type === 'text' && (
+        <span
+          className="font-mono text-center leading-tight px-2 py-1 rounded border border-[#fbbf24]/30 text-[#fbbf24]"
+          style={{ fontSize: '9px' }}
+        >
+          {skill.name}
+        </span>
+      )}
 
-        {/* LEGACY diagonal scratch */}
-        {legacy && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-full h-px bg-[#64748b]/20 rotate-12" />
-          </div>
-        )}
-      </div>
-    </Tooltip>
+      {legacy && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-full h-px bg-[#64748b]/20 rotate-12" />
+        </div>
+      )}
+    </div>
   )
 }
