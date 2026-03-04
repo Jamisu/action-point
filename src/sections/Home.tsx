@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center px-6 pt-16 bg-gradient-to-b from-[#0a0e1a] to-[#0f1e35]"//261F34 150D26
+      className="min-h-screen flex flex-col justify-center items-center px-6 pt-16 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"//0f1e35 0a0e1a
     >
       <div className="max-w-4xl mx-auto w-full flex flex-col gap-6 text-center">
 
