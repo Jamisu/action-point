@@ -42,7 +42,7 @@ export function TooltipProvider({ children }: { children: React.ReactNode }) {
     anchor: DOMRect,
     options?: Partial<Pick<TooltipState, 'position' | 'color'>>
   ) => {
-    const position = options?.position ?? 'top'
+    const position = options?.position ?? 'bottom'
     const color = options?.color ?? DEFAULT_COLOR
 
     let x = 0
@@ -89,7 +89,7 @@ export function TooltipProvider({ children }: { children: React.ReactNode }) {
       <div
         role="tooltip"
         style={{
-          position: 'absolute',
+          position: 'fixed',
           top: state.y,
           left: state.x,
           transform: transformMap[state.position],
