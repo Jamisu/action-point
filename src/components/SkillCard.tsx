@@ -54,30 +54,30 @@ export default function SkillCard({
       className={`
         relative flex items-center justify-center
         w-24 h-24 rounded-xl border transition-all duration-300 cursor-default
-        hover:scale-105
+        hover:scale-112
         ${legacy
-          ? 'border-[#1f2d45]/50 bg-[#0a0e1a]/40 hover:shadow-[#64748b]/10'
+          ? 'border-[#1f2d45]/80 bg-[#0a0e1a]/60 hover:shadow-[#64748b]/10'
           : emerging
-          ? 'border-[#fbbf24]/20 bg-[#0f1e35]/60 hover:border-[#fbbf24]/60 hover:bg-[#0f1e35] hover:shadow-lg hover:shadow-[#fbbf24]/10'
-          : 'border-[#1f2d45] bg-[#0a0e1a]/60 hover:border-[#fbbf24]/40 hover:bg-[#0f1e35]/80 hover:shadow-lg hover:shadow-[#fbbf24]/10'
+          ? 'border-[#fbbf24]/80 bg-[#0f1e35]/60 hover:border-[#fbbf24]/60 hover:bg-[#0f1e35] hover:shadow-lg hover:shadow-[#fbbf24]/10'
+          : 'border-[#1f2d45] bg-[#0a0e1a]/80 hover:border-[#fbbf24]/40 hover:bg-[#0f1e35]/80 hover:shadow-lg hover:shadow-[#fbbf24]/10'
         }
       `}
     >
       {skill.type === 'devicon' && (
         <i
-          className={`devicon-${skill.icon}-plain text-4xl`}
+          className={`devicon-${skill.icon}-plain text-5xl`}
           style={{ color: iconColor }}
         />
       )}
 
       {skill.type === 'simple' && skill.SimpleIcon && (
-        <skill.SimpleIcon size={34} color={iconColor} />
+        <skill.SimpleIcon size={48} color={iconColor} />
       )}
 
       {skill.type === 'text' && (
         <span
           className="font-mono text-center leading-tight px-2 py-1 rounded border border-[#fbbf24]/30 text-[#fbbf24]"
-          style={{ fontSize: '9px' }}
+          style={{ fontSize: '14px' }}
         >
           {skill.name}
         </span>

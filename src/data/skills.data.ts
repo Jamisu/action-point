@@ -57,7 +57,7 @@ export const Groups: SkillGroup[] = [
     legacy: true,
     skills: [
       { name: 'Flash',        type: 'text' },
-      { name: 'ActionScript', type: 'text' },
+      { name: 'Action\nScript', type: 'text' },
       { name: 'AmfPHP',       type: 'text' },
       { name: 'Flare3D',      type: 'text' },
     ],

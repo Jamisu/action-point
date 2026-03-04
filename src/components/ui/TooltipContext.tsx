@@ -99,7 +99,7 @@ export function TooltipProvider({ children }: { children: React.ReactNode }) {
           zIndex: 9999,
           transition: 'opacity 0.15s ease',
         }}
-        className="px-2 py-1 rounded bg-[#0f1e35] border border-[#1f2d45] font-mono text-[10px] uppercase tracking-widest whitespace-nowrap"
+        className="px-2 py-1 rounded bg-[#0f1e35] border border-[#1f2d45] shadow-lg font-mono text-[10px] uppercase tracking-widest whitespace-nowrap"
       >
         {state.text}
       </div>
