@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import Home from './Home'
 
 describe('Home section', () => {
-  it('renders hero text content', () => {
+  it('renders Home text content', () => {
     render(<Home />)
 
     expect(screen.getByText('John Doe')).toBeInTheDocument()
