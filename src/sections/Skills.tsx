@@ -11,25 +11,25 @@ function GroupBlock({ group }: { group: SkillGroup }) {
   const pairB = group.skills.slice(2, 4)
 
   return (
-    <div className="flex flex-col gap-3 flex-1">
-      <p className={`font-mono text-xs uppercase tracking-widest ${
+    <div className="flex flex-col gap-4 flex-1">
+      <p className={`font-mono text-sm uppercase tracking-widest font-bold ${
         group.legacy
-          ? 'text-[#64748b]/60'
+          ? 'text-[#94a3b8]'
           : group.emerging
-          ? 'text-[#fbbf24]/70'
-          : 'text-[#fbbf24]/50'
+          ? 'text-[#fbbf24]'
+          : 'text-[#fbbf24]'
       }`}>
         {group.legacy ? `⚰ ${group.label}` : group.label}
       </p>
 
-      <div className="flex items-center gap-2">
-        <div className="flex gap-2">
+      <div className="flex items-center gap-3">
+        <div className="flex gap-3">
           {pairA.map(s => (
             <SkillCard key={s.name} skill={s} legacy={group.legacy} emerging={group.emerging} tooltipPosition="bottom" />
           ))}
         </div>
-        <div className="w-6" />
-        <div className="flex gap-2">
+        <div className="w-8" />
+        <div className="flex gap-3">
           {pairB.map(s => (
             <SkillCard key={s.name} skill={s} legacy={group.legacy} emerging={group.emerging} tooltipPosition="bottom" />
           ))}
@@ -61,7 +61,7 @@ function AnimatedRow({ left, right, rowIndex }: { left: SkillGroup; right: Skill
   return (
     <div
       ref={ref}
-      className="flex flex-col md:flex-row gap-10 md:gap-12"
+      className="flex flex-col md:flex-row gap-10 md:gap-16"
       style={{
         opacity: visible ? rowOpacity[rowIndex] : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
