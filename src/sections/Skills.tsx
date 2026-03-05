@@ -19,21 +19,13 @@ function GroupBlock({ group }: { group: SkillGroup }) {
           ? 'text-[#fbbf24]'
           : 'text-[#fbbf24]'
       }`}>
-        {group.legacy ? `⚰ ${group.label}` : group.label}
+        {group.legacy ? `${group.label}` : group.label}
       </p>
 
-      <div className="flex items-center gap-3">
-        <div className="flex gap-3">
-          {pairA.map(s => (
-            <SkillCard key={s.name} skill={s} legacy={group.legacy} emerging={group.emerging} tooltipPosition="bottom" />
-          ))}
-        </div>
-        <div className="w-8" />
-        <div className="flex gap-3">
-          {pairB.map(s => (
-            <SkillCard key={s.name} skill={s} legacy={group.legacy} emerging={group.emerging} tooltipPosition="bottom" />
-          ))}
-        </div>
+      <div className="flex items-center justify-between">
+        {group.skills.map(s => (
+          <SkillCard key={s.name} skill={s} legacy={group.legacy} emerging={group.emerging} tooltipPosition="bottom" />
+        ))}
       </div>
     </div>
   )
