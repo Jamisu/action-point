@@ -3,8 +3,6 @@
 import { useRef } from 'react'
 import { useTooltip } from '@/components/ui/TooltipContext'
 
-// ─── TYPES ───────────────────────────────────────────────────────────────────
-
 export interface Skill {
   name: string
   tooltip?: string
@@ -20,8 +18,6 @@ export interface SkillGroup {
   legacy?: boolean
   emerging?: boolean
 }
-
-// ─── COMPONENT ───────────────────────────────────────────────────────────────
 
 interface SkillCardProps {
   skill: Skill

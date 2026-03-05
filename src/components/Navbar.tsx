@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -23,7 +24,6 @@ export default function Navbar() {
         setIsOpen(false)
       }
     }
-
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
@@ -34,11 +34,14 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
 
           {/* LOGO */}
-          <Link
-            href="/"
-            className="font-mono font-bold text-xl text-[#4f9cf9] tracking-widest hover:text-white transition-colors"
-          >
-            AP
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image
+              src="/AP_logo.png"
+              alt="AP Logo"
+              width={40}
+              height={40}
+              priority
+            />
           </Link>
 
           {/* DESKTOP NAV */}
