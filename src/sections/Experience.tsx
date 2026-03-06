@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { jobs, type Job } from '@/data/experience.data'
+import { useData } from '@/contexts/DataContext'
+import { Job } from '@/types/types'
 
 function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLegacyFirst?: boolean }) {
   const [visible, setVisible] = useState(false)
@@ -96,6 +97,7 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 
 export default function Experience() {
+  const { jobs } = useData()
   const firstLegacyIndex = jobs.findIndex(j => j.legacy)
 
   return (

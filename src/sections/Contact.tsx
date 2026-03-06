@@ -2,10 +2,21 @@
 
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
-import { MapPin } from 'lucide-react'
-import { links } from '@/data/contact.data'
+import { MapPin, Mail, Phone, Linkedin, Github, LucideProps } from 'lucide-react'
+import { useData } from '@/contexts/DataContext'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
+
+// ─── ICON MAP ────────────────────────────────────────────────────────────────
+
+const iconMap: Record<string, React.ComponentType<LucideProps>> = {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+}
+
+// ─── ANIMATED MAP ────────────────────────────────────────────────────────────
 
 function AnimatedMap() {
   const [visible, setVisible] = useState(false)
@@ -38,15 +49,17 @@ function AnimatedMap() {
 // ─── ANIMATED CARD ───────────────────────────────────────────────────────────
 
 function AnimatedCard({
-  icon: Icon, label, value, href, index, visible
+  icon, label, value, href, index, visible
 }: {
-  icon: React.ComponentType<{ size?: number; className?: string }>
+  icon: string
   label: string
   value: string
   href: string
   index: number
   visible: boolean
 }) {
+  const Icon = iconMap[icon]
+
   return (
     <a
       href={href}
@@ -59,10 +72,12 @@ function AnimatedCard({
         transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`,
       }}
     >
-      <Icon
-        size={20}
-        className="text-[#4f9cf9] shrink-0 group-hover:scale-110 transition-transform duration-300"
-      />
+      {Icon && (
+        <Icon
+          size={20}
+          className="text-[#4f9cf9] shrink-0 group-hover:scale-110 transition-transform duration-300"
+        />
+      )}
       <div className="flex flex-col min-w-0">
         <span className="font-mono text-xs uppercase tracking-widest text-[#64748b] mb-0.5">
           {label}
@@ -80,6 +95,7 @@ function AnimatedCard({
 function AnimatedInfo() {
   const [visible, setVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const { contact } = useData()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -116,8 +132,8 @@ function AnimatedInfo() {
         }}
       />
 
-      {/* CONTACT CARDS — staggered from right */}
-      {links.map((link, i) => (
+      {/* CONTACT CARDS */}
+      {contact.map((link, i) => (
         <AnimatedCard
           key={link.label}
           {...link}

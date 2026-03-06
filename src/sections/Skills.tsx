@@ -1,23 +1,17 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import SkillCard, { SkillGroup } from '@/components/SkillCard'
-import { Groups } from '@/data/skills.data'
+import { useData } from '@/contexts/DataContext'
+import { SkillGroup } from '@/types/types'
+import SkillCard from '@/components/SkillCard'
 
 // ─── GROUP BLOCK ─────────────────────────────────────────────────────────────
 
 function GroupBlock({ group }: { group: SkillGroup }) {
-  const pairA = group.skills.slice(0, 2)
-  const pairB = group.skills.slice(2, 4)
-
   return (
     <div className="flex flex-col gap-4 flex-1">
       <p className={`font-mono text-sm uppercase tracking-widest font-bold ${
-        group.legacy
-          ? 'text-[#94a3b8]'
-          : group.emerging
-          ? 'text-[#fbbf24]'
-          : 'text-[#fbbf24]'
+        group.legacy ? 'text-[#94a3b8]' : 'text-[#fbbf24]'
       }`}>
         {group.legacy ? `🕯️${group.label}` : group.label}
       </p>
@@ -69,13 +63,14 @@ function AnimatedRow({ left, right, rowIndex }: { left: SkillGroup; right: Skill
 
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 
-const rows: [SkillGroup, SkillGroup][] = [
-  [Groups[0], Groups[1]],
-  [Groups[2], Groups[3]],
-  [Groups[4], Groups[5]],
-]
-
 export default function Skills() {
+  const { skillGroups } = useData()
+
+  const rows = skillGroups.reduce<[SkillGroup, SkillGroup][]>((acc, _, i) => {
+    if (i % 2 === 0 && skillGroups[i + 1]) acc.push([skillGroups[i], skillGroups[i + 1]])
+    return acc
+  }, [])
+
   return (
     <section
       id="skills"
