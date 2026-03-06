@@ -2,40 +2,10 @@
 
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
-import { Mail, Phone, Github, Linkedin, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
+import { links } from '@/data/contact.data'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
-
-// ─── DATA ────────────────────────────────────────────────────────────────────
-
-const links = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'any@email.com',
-    href: 'mailto:any@email.com',
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+48 666 666 666',
-    href: 'tel:+48666666666',
-  },
-  {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/yourprofile',
-    href: 'https://linkedin.com/in/yourprofile',
-  },
-  {
-    icon: Github,
-    label: 'GitHub',
-    value: 'github.com/Jamisu',
-    href: 'https://github.com/Jamisu',
-  },
-]
-
-// ─── ANIMATED MAP ────────────────────────────────────────────────────────────
 
 function AnimatedMap() {
   const [visible, setVisible] = useState(false)
