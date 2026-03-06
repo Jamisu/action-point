@@ -19,7 +19,7 @@ function GroupBlock({ group }: { group: SkillGroup }) {
           ? 'text-[#fbbf24]'
           : 'text-[#fbbf24]'
       }`}>
-        {group.legacy ? `${group.label}` : group.label}
+        {group.legacy ? `🕯️${group.label}` : group.label}
       </p>
 
       <div className="flex items-center justify-between">

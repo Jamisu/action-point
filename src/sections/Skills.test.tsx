@@ -36,7 +36,7 @@ describe('Skills section', () => {
 
   it('renders legacy group with tombstone emoji', () => {
     render(<Skills />)
-    expect(screen.getByText(/⚰/)).toBeInTheDocument()
+    expect(screen.getByText(/🕯️/)).toBeInTheDocument()
     expect(screen.getByText(/legacy/i)).toBeInTheDocument()
   })
 
