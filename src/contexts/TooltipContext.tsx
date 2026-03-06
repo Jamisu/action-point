@@ -2,8 +2,6 @@
 
 import { createContext, useContext, useState, useCallback } from 'react'
 
-// ─── TYPES ───────────────────────────────────────────────────────────────────
-
 interface TooltipState {
   text: string
   x: number

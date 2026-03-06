@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { useTooltip } from '@/components/ui/TooltipContext'
+import { useTooltip } from '@/contexts/TooltipContext'
 import {
   SiTailwindcss,
   SiPostman,
