@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import { useTooltip } from '@/components/ui/TooltipContext'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -17,6 +18,8 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const { show, hide } = useTooltip()
+const refTooltipRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -47,7 +50,14 @@ export default function Navbar() {
           {/* DESKTOP NAV */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.label}
+                ref={link.label === 'References' ? refTooltipRef : undefined}
+                onMouseEnter={() => {
+                  if (link.label === 'References' && refTooltipRef.current) {
+                    show('Live CheatSheets', refTooltipRef.current.getBoundingClientRect(), { position: 'bottom' })
+                  }
+                }}
+                onMouseLeave={hide}>
                 <Link
                   href={link.href}
                   className={`font-mono text-sm uppercase tracking-widest transition-colors hover:text-[#4f9cf9]
