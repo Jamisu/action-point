@@ -30,15 +30,20 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetchData()
-      .then(data => {
-        setJobs(data.jobs)
-        setSkillGroups(data.skillGroups)
-        setContact(data.contact)
-        setProjects(data.projects)
-      })
-      .catch(err => setError(err.message))
-      .finally(() => setIsLoading(false))
+    // ─── TEMP: 3s fake delay to test preloader ─────────────────────────────
+    // TODO: remove setTimeout wrapper before production
+    setTimeout(() => {
+      fetchData()
+        .then(data => {
+          setJobs(data.jobs)
+          setSkillGroups(data.skillGroups)
+          setContact(data.contact)
+          setProjects(data.projects)
+        })
+        .catch(err => setError(err.message))
+        .finally(() => setIsLoading(false))
+    }, 3000)
+    // ──────────────────────────────────────────────────────────────────────
   }, [])
 
   return (
