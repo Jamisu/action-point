@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/Navbar'
+import Preloader from '@/components/Preloader'
 import { TooltipProvider } from '@/contexts/TooltipContext'
+import { DataProvider } from '@/contexts/DataContext'
 import 'devicon/devicon.min.css'
 
 const geistSans = Geist({
@@ -29,8 +31,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <TooltipProvider>
-          <Navbar />
-          {children}
+          <DataProvider>
+            <Navbar />
+            <Preloader />
+            {children}
+          </DataProvider>
         </TooltipProvider>
       </body>
     </html>
