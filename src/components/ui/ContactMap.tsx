@@ -16,6 +16,7 @@ const icon = L.icon({
 
 export default function ContactMap() {
   return (
+    <div className="flex-1 min-h-[400px] rounded-2xl overflow-hidden border border-[#1f2d45] opacity-70">
     <MapContainer
       center={[50.016, 19.984]}
       zoom={12}
@@ -24,8 +25,8 @@ export default function ContactMap() {
     >
       {/* Dark theme tiles — Stadia Maps Alidade Smooth Dark (free, no API key) */}
       <TileLayer
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
       />
       <Marker position={[50.016, 19.984]} icon={icon}>
         <Popup>
@@ -35,5 +36,6 @@ export default function ContactMap() {
         </Popup>
       </Marker>
     </MapContainer>
+    </div>
   )
 }
