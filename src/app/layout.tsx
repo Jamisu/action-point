@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/Navbar'
-import { TooltipProvider } from '@/components/ui/TooltipContext'
+import { TooltipProvider } from '@/contexts/TooltipContext'
 import 'devicon/devicon.min.css'
 
 const geistSans = Geist({
