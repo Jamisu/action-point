@@ -2,6 +2,19 @@
 
 import { useRef } from 'react'
 import { useTooltip } from '@/components/ui/TooltipContext'
+import {
+  SiTailwindcss,
+  SiPostman,
+  SiThreedotjs,
+} from '@icons-pack/react-simple-icons'
+
+const iconMap = {
+  SiTailwindcss,
+  SiPostman, 
+  SiThreedotjs,
+} as const
+
+type IconKey = keyof typeof iconMap
 
 export interface Skill {
   name: string
@@ -9,6 +22,7 @@ export interface Skill {
   type: 'devicon' | 'simple' | 'text'
   icon?: string
   SimpleIcon?: React.ComponentType<{ size?: number; color?: string }>
+  simpleIcon?: string
   color?: string
 }
 
@@ -36,6 +50,9 @@ export default function SkillCard({
   const ref = useRef<HTMLDivElement>(null)
   const label = skill.tooltip ?? skill.name
   const iconColor = legacy ? '#94a3b8' : '#fbbf24'
+  const ResolvedIcon = skill.simpleIcon 
+    ? iconMap[skill.simpleIcon as IconKey] 
+    : null
 
   function handleMouseEnter() {
     if (!ref.current) return
@@ -66,8 +83,8 @@ export default function SkillCard({
         />
       )}
 
-      {skill.type === 'simple' && skill.SimpleIcon && (
-        <skill.SimpleIcon size={48} color={iconColor} />
+      {skill.type === 'simple' && ResolvedIcon && (
+        <ResolvedIcon size={48} color={iconColor} />
       )}
 
       {skill.type === 'text' && (
