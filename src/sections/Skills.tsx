@@ -5,7 +5,6 @@ import { useData } from '@/contexts/DataContext'
 import { SkillGroup } from '@/types/types'
 import SkillCard from '@/components/SkillCard'
 
-// ─── GROUP BLOCK ─────────────────────────────────────────────────────────────
 
 function GroupBlock({ group }: { group: SkillGroup }) {
   return (
@@ -24,8 +23,6 @@ function GroupBlock({ group }: { group: SkillGroup }) {
     </div>
   )
 }
-
-// ─── ANIMATED ROW ────────────────────────────────────────────────────────────
 
 const rowOpacity = [1, 0.8, 0.6]
 
@@ -60,8 +57,6 @@ function AnimatedRow({ left, right, rowIndex }: { left: SkillGroup; right: Skill
     </div>
   )
 }
-
-// ─── MAIN ────────────────────────────────────────────────────────────────────
 
 export default function Skills() {
   const { skillGroups } = useData()

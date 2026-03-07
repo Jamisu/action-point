@@ -26,10 +26,9 @@ export default function Preloader() {
         transition: 'opacity 0.4s ease, transform 0.4s ease',
       }}
     >
-      {/* GLOW */}
-      <div className="absolute w-40 h-40 rounded-full bg-[#4f9cf9]/10 blur-2xl" />
 
-      {/* FLIPPING LOGO */}
+      <div className="absolute w-40 h-40 rounded-full bg-[#4f9cf9]/10 blur-2xl" />
+      
       <div style={{ animation: isLoading ? 'flip 1.4s ease-in-out infinite' : undefined }}>
         <Image
           src="/AP_logo.png"

@@ -7,16 +7,12 @@ import { useData } from '@/contexts/DataContext'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
 
-// ─── ICON MAP ────────────────────────────────────────────────────────────────
-
 const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   Mail,
   Phone,
   Linkedin,
   Github,
 }
-
-// ─── ANIMATED MAP ────────────────────────────────────────────────────────────
 
 function AnimatedMap() {
   const [visible, setVisible] = useState(false)
@@ -45,8 +41,6 @@ function AnimatedMap() {
     </div>
   )
 }
-
-// ─── ANIMATED CARD ───────────────────────────────────────────────────────────
 
 function AnimatedCard({
   icon, label, value, href, index, visible
@@ -90,7 +84,6 @@ function AnimatedCard({
   )
 }
 
-// ─── ANIMATED INFO PANEL ─────────────────────────────────────────────────────
 
 function AnimatedInfo() {
   const [visible, setVisible] = useState(false)
@@ -109,7 +102,7 @@ function AnimatedInfo() {
   return (
     <div ref={ref} className="flex flex-col justify-center gap-6 lg:w-80">
 
-      {/* LOCATION */}
+
       <div
         className="flex items-center gap-3"
         style={{
@@ -132,7 +125,6 @@ function AnimatedInfo() {
         }}
       />
 
-      {/* CONTACT CARDS */}
       {contact.map((link, i) => (
         <AnimatedCard
           key={link.label}
@@ -145,8 +137,6 @@ function AnimatedInfo() {
     </div>
   )
 }
-
-// ─── MAIN ────────────────────────────────────────────────────────────────────
 
 export default function Contact() {
   return (

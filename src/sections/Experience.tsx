@@ -37,7 +37,7 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
         }}
         className="relative pl-10 pb-14 group"
       >
-        {/* DOT */}
+        
         <div className={`
           absolute left-0 top-1.5 w-3 h-3 rounded-full border-2 transition-all duration-300
           ${job.legacy
@@ -46,26 +46,26 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
           }
         `} />
 
-        {/* DATE */}
+        
         <p className={`font-mono text-sm uppercase tracking-widest mb-2 ${
           job.legacy ? 'text-[#94a3b8]' : 'text-[#4f9cf9]'
         }`}>
           {job.date}
         </p>
 
-        {/* COMPANY */}
+        
         <p className="font-sans text-2xl font-bold text-white mb-1">
           {job.company}
         </p>
 
-        {/* ROLE */}
+        
         <p className={`font-mono text-sm uppercase tracking-widest mb-5 ${
           job.legacy ? 'text-[#94a3b8]' : 'text-[#fbbf24]'
         }`}>
           {job.role}
         </p>
 
-        {/* DESCRIPTION */}
+        
         <p className={`font-mono text-base leading-relaxed mb-5 max-w-2xl border-l-2 pl-4 ${
           job.legacy
             ? 'text-[#94a3b8] border-[#94a3b8]/30'
@@ -74,7 +74,7 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
           {job.description}
         </p>
 
-        {/* TAGS */}
+        
         <div className="flex flex-wrap gap-2">
           {job.tags.map(tag => (
             <span
@@ -94,8 +94,6 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
   )
 }
 
-// ─── MAIN ────────────────────────────────────────────────────────────────────
-
 export default function Experience() {
   const { jobs } = useData()
   const firstLegacyIndex = jobs.findIndex(j => j.legacy)
@@ -107,7 +105,7 @@ export default function Experience() {
     >
       <div className="max-w-4xl mx-auto w-full">
 
-        {/* HEADER */}
+
         <div className="flex flex-col gap-4 mb-20">
           <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">
             Experience
@@ -118,7 +116,6 @@ export default function Experience() {
           <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
         </div>
 
-        {/* TIMELINE */}
         <div className="relative">
           <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#4f9cf9] via-[#4f9cf9]/40 to-[#1f2d45]" />
 

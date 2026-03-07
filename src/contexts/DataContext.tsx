@@ -4,8 +4,6 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { fetchData } from '@/lib/api'
 import { Job, SkillGroup, ContactLink, Project } from '@/types/types'
 
-// ─── CONTEXT TYPE ─────────────────────────────────────────────────────────────
-
 interface DataContextValue {
   jobs: Job[]
   skillGroups: SkillGroup[]
@@ -15,11 +13,7 @@ interface DataContextValue {
   error: string | null
 }
 
-// ─── CONTEXT ──────────────────────────────────────────────────────────────────
-
 const DataContext = createContext<DataContextValue | null>(null)
-
-// ─── PROVIDER ─────────────────────────────────────────────────────────────────
 
 export function DataProvider({ children }: { children: React.ReactNode }) {
   const [jobs, setJobs] = useState<Job[]>([])
@@ -30,9 +24,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    // ─── TEMP: 3s fake delay to test preloader ─────────────────────────────
-    // TODO: remove setTimeout wrapper before production
-    setTimeout(() => {
+
       fetchData()
         .then(data => {
           setJobs(data.jobs)
@@ -42,9 +34,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
         })
         .catch(err => setError(err.message))
         .finally(() => setIsLoading(false))
-    }, 3000)
-    // ──────────────────────────────────────────────────────────────────────
-  }, [])
+    }, [])
 
   return (
     <DataContext.Provider value={{ jobs, skillGroups, contact, projects, isLoading, error }}>
@@ -52,8 +42,6 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     </DataContext.Provider>
   )
 }
-
-// ─── HOOK ─────────────────────────────────────────────────────────────────────
 
 export function useData() {
   const ctx = useContext(DataContext)

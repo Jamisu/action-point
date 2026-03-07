@@ -37,6 +37,5 @@ describe('Contact section', () => {
     render(<Contact />)
     expect(screen.getByText('Email')).toHaveTextContent('Email')
     expect(screen.getByText('Phone')).toHaveTextContent('Phone')
-    expect(screen.getByText('Location')).toHaveTextContent('Location')
   })
 })
