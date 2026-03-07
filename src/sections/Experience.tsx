@@ -23,7 +23,7 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
     <>
       {isLegacyFirst && (
         <div className="flex items-center gap-4 my-10">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#94a3b8]">⚰ Flash era</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#94a3b8]"> Flash era</span>
           <div className="flex-1 h-px bg-[#1f2d45]" />
         </div>
       )}
@@ -73,7 +73,6 @@ function JobEntry({ job, index, isLegacyFirst }: { job: Job; index: number; isLe
         }`}>
           {job.description}
         </p>
-
         
         <div className="flex flex-wrap gap-2">
           {job.tags.map(tag => (

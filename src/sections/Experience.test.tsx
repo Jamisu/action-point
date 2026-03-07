@@ -16,7 +16,7 @@ jest.mock('@/contexts/DataContext', () => ({
         date: 'VI.2014 — X.2015',
         company: 'Legacy Co',
         role: 'Senior Flash Developer',
-        description: 'Flash era work.',
+        description: 'Legacy era work.',
         tags: ['Flash', 'ActionScript 3'],
         legacy: true,
       },
