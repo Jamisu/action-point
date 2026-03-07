@@ -1,9 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import Navbar from './Navbar'
 
-
+jest.mock('@/contexts/TooltipContext', () => ({
+  useTooltip: () => ({ show: jest.fn(), hide: jest.fn() }),
+  TooltipProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}))
 
 describe('Navbar component', () => {
+
   it('renders logo correctly', () => {
     render(<Navbar />)
 

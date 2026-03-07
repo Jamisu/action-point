@@ -31,7 +31,7 @@ jest.mock('@/contexts/DataContext', () => ({
 
 beforeEach(() => {
   window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
-    callback([{ isIntersecting: true }])  // ← fire immediately
+    callback([{ isIntersecting: true }])
     return {
       observe: jest.fn(),
       disconnect: jest.fn(),
