@@ -26,13 +26,13 @@ describe('About section', () => {
   })
 
   it('renders typewriter text after intersection', async () => {
-    render(<About />)
+    render(<About speed={0} />)
 
     intersectionCallback([{ isIntersecting: true } as IntersectionObserverEntry])
 
     await waitFor(
       () => expect(screen.getByText(/front-end engineer/i)).toBeInTheDocument(),
-      { timeout: 3000 }
+      { timeout: 1000 }
     )
   })
 })
