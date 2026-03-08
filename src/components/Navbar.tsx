@@ -6,20 +6,20 @@ import Image from 'next/image'
 import { useTooltip } from '@/contexts/TooltipContext'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'References', href: '/references' },
+  { label: 'Home',       href: '/home' },
+  { label: 'About',      href: '/about' },
+  { label: 'Skills',     href: '/skills' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Projects',   href: '/projects' },
+  { label: 'Contact',    href: '/contact' },
+  { label: 'References', href: 'https://references-action-point.vercel.app/' }
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const { show, hide } = useTooltip()
-const refTooltipRef = useRef<HTMLLIElement>(null)
+  const refTooltipRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -35,8 +35,7 @@ const refTooltipRef = useRef<HTMLLIElement>(null)
     <div ref={menuRef}>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#0a0e1a]/90 to-transparent backdrop-blur-sm border-b-2 border-[#1f2d45]">
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
-
-          {/* LOGO */}
+          
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
             <Image
               src="/AP_logo.png"
@@ -46,8 +45,7 @@ const refTooltipRef = useRef<HTMLLIElement>(null)
               priority
             />
           </Link>
-
-          {/* DESKTOP NAV */}
+          
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.label}
@@ -60,6 +58,8 @@ const refTooltipRef = useRef<HTMLLIElement>(null)
                 onMouseLeave={hide}>
                 <Link
                   href={link.href}
+                  target={link.label === 'References' ? '_blank' : undefined}
+                  rel={link.label === 'References' ? 'noopener noreferrer' : undefined}
                   className={`font-mono text-sm uppercase tracking-widest transition-colors hover:text-[#4f9cf9]
                     ${link.label === 'References'
                       ? 'text-[#a78bfa] hover:text-[#a78bfa] border border-[#a78bfa33] px-3 py-1 rounded hover:border-[#a78bfa]'
@@ -71,8 +71,7 @@ const refTooltipRef = useRef<HTMLLIElement>(null)
               </li>
             ))}
           </ul>
-
-          {/* HAMBURGER */}
+          
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -92,9 +91,11 @@ const refTooltipRef = useRef<HTMLLIElement>(null)
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
+                  target={link.label === 'References' ? '_blank' : undefined}
+                  rel={link.label === 'References' ? 'noopener noreferrer' : undefined}
                   className={`font-mono text-sm uppercase tracking-widest transition-colors hover:text-[#4f9cf9]
                     ${link.label === 'References'
-                      ? 'text-[#a78bfa]'
+                      ? 'text-[#a78bfa] hover:text-[#a78bfa] border border-[#a78bfa33] px-3 py-1 rounded hover:border-[#a78bfa]'
                       : 'text-[#64748b]'
                     }`}
                 >
