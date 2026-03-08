@@ -16,14 +16,13 @@ const icon = L.icon({
 
 export default function ContactMap() {
   return (
-    <div className="flex-1 min-h-[400px] rounded-2xl overflow-hidden border border-[#1f2d45] opacity-70">
     <MapContainer
       center={[50.016, 19.984]}
       zoom={12}
       scrollWheelZoom={false}
       style={{ height: '100%', width: '100%', minHeight: '400px' }}
     >
-      {/* Dark theme tiles — Stadia Maps Alidade Smooth Dark (free, no API key) */}
+
       <TileLayer
         url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
@@ -36,6 +35,5 @@ attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreet
         </Popup>
       </Marker>
     </MapContainer>
-    </div>
   )
 }

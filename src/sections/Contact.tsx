@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
 import { MapPin, Mail, Phone, Linkedin, Github, LucideProps } from 'lucide-react'
 import { useData } from '@/contexts/DataContext'
+import { SiBehance, SiSoundcloud } from '@icons-pack/react-simple-icons'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
 
@@ -12,6 +13,8 @@ const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   Phone,
   Linkedin,
   Github,
+  SiBehance,
+  SiSoundcloud,
 }
 
 function AnimatedMap() {
@@ -30,9 +33,9 @@ function AnimatedMap() {
   return (
     <div
       ref={ref}
-      className="flex-1 min-h-[400px] rounded-2xl overflow-hidden border border-[#1f2d45] opacity-90"
+      className="flex-1 self-stretch rounded-2xl overflow-hidden border border-[#1f2d45] opacity-90"
       style={{
-        opacity: visible ? 0.7 : 0,
+        opacity: visible ? 1 : 0,
         transform: visible ? 'translateX(0)' : 'translateX(-24px)',
         transition: 'opacity 0.6s ease, transform 0.6s ease',
       }}
@@ -154,7 +157,7 @@ export default function Contact() {
           <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-8">
           <AnimatedMap />
           <AnimatedInfo />
         </div>

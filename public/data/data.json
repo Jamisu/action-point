@@ -175,6 +175,18 @@
       "label": "GitHub",
       "value": "github.com/Jamisu",
       "href": "https://github.com/Jamisu"
+    },
+    {
+      "icon": "SiBehance",
+      "label": "Behance",
+      "value": "behance.net/chaotec",
+      "href": "https://www.behance.net/chaotec"
+    },
+    {
+      "icon": "SiSoundcloud",
+      "label": "SoundCloud",
+      "value": "soundcloud.com/chaotec",
+      "href": "https://soundcloud.com/chaotec"
     }
   ],
 
