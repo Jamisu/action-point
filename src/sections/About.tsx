@@ -60,7 +60,8 @@ export default function About({ speed = 20 }: { speed?: number }) {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+      className="min-h-screen flex flex-col justify-start px-6 pb-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+      style={{ paddingTop: 'clamp(120px, 15vw, 220px)' }}
     >
       <div className="max-w-4xl mx-auto w-full flex flex-col gap-8">
         
@@ -74,14 +75,15 @@ export default function About({ speed = 20 }: { speed?: number }) {
         
         <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
 
-        {isVisible && (
-          <TypeWriter
-            text={aboutText}
-            speed={speed}
-            className="font-mono text-base md:text-lg text-[#94a3b8] leading-relaxed max-w-2xl"
-          />
-        )}
-
+        <div className="min-h-[320px] md:min-h-[240px]">
+          {isVisible && (
+            <TypeWriter
+              text={aboutText}
+              speed={speed}
+              className="font-mono text-base md:text-lg text-[#94a3b8] leading-relaxed max-w-2xl"
+            />
+          )}
+        </div>
       </div>
     </section>
   )
