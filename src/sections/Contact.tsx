@@ -30,7 +30,7 @@ function AnimatedMap() {
   return (
     <div
       ref={ref}
-      className="flex-1 min-h-[400px] rounded-2xl overflow-hidden border border-[#1f2d45] opacity-70"
+      className="flex-1 min-h-[400px] rounded-2xl overflow-hidden border border-[#1f2d45] opacity-90"
       style={{
         opacity: visible ? 0.7 : 0,
         transform: visible ? 'translateX(0)' : 'translateX(-24px)',
@@ -101,8 +101,6 @@ function AnimatedInfo() {
 
   return (
     <div ref={ref} className="flex flex-col justify-center gap-6 lg:w-80">
-
-
       <div
         className="flex items-center gap-3"
         style={{
@@ -146,7 +144,6 @@ export default function Contact() {
     >
       <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
 
-        {/* HEADER */}
         <div className="flex flex-col gap-4">
           <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">
             Contact
@@ -157,7 +154,6 @@ export default function Contact() {
           <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
         </div>
 
-        {/* MAP + INFO */}
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
           <AnimatedMap />
           <AnimatedInfo />

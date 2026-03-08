@@ -2,17 +2,52 @@ import { render, screen } from '@testing-library/react'
 import Contact from './Contact'
 
 jest.mock('@/components/ui/ContactMap', () => {
-  // () => () => <div /> — compact, keeping as reference
   const MockMap = () => <div data-testid="contact-map" />
   return MockMap
 })
 
+jest.mock('@/contexts/DataContext', () => ({
+  useData: () => ({
+    "contact": [
+      {
+        "icon": "Mail",
+        "label": "Email",
+        "value": "any@email.com",
+        "href": "mailto:any@email.com"
+      },
+      {
+        "icon": "Phone",
+        "label": "Phone",
+        "value": "+48 666 666 666",
+        "href": "tel:+48 666 666 666"
+      },
+      {
+        "icon": "Linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/yourprofile",
+        "href": "https://linkedin.com/in/yourprofile"
+      },
+      {
+        "icon": "Github",
+        "label": "GitHub",
+        "value": "github.com/Jamisu",
+        "href": "https://github.com/Jamisu"
+      }
+    ],
+  }),
+}))
+
+let intersectionCallback: Function
+
 beforeEach(() => {
-  window.IntersectionObserver = jest.fn().mockImplementation((callback) => ({
-    observe: jest.fn(),
-    disconnect: jest.fn(),
-    unobserve: jest.fn(),
-  }))
+  window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+    intersectionCallback = callback
+    return {
+      observe: jest.fn(),
+      disconnect: jest.fn(),
+      unobserve: jest.fn()
+    }
+  })
 })
 
 describe('Contact section', () => {
@@ -28,9 +63,8 @@ describe('Contact section', () => {
   
   it('renders contact links with correct hrefs', () => {
     render(<Contact />)
-    expect(screen.getByText('Email').closest('a')).toHaveAttribute('href', 'mailto:info@actionpoint.com')
-    expect(screen.getByText('Phone').closest('a')).toHaveAttribute('href', 'tel:+1234567890')
-    expect(screen.getByText('Location').closest('a')).toHaveAttribute('href', 'https://maps.google.com')
+    expect(screen.getByText('Email').closest('a')).toHaveAttribute('href', 'mailto:any@email.com')
+    expect(screen.getByText('Phone').closest('a')).toHaveAttribute('href', 'tel:+48 666 666 666')
   })
   
   it('renders contact links with correct text', () => {

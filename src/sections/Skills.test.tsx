@@ -1,9 +1,23 @@
 import { render, screen } from '@testing-library/react'
 import Skills from './Skills'
 
-// Mock TooltipContext so useTooltip doesn't throw outside provider
-jest.mock('@/components/ui/TooltipContext', () => ({
+jest.mock('@/contexts/TooltipContext', () => ({
   useTooltip: () => ({ show: jest.fn(), hide: jest.fn() }),
+}))
+
+jest.mock('@/contexts/DataContext', () => ({
+  useData: () => ({
+    skillGroups: [
+      { label: 'Core Stack', skills: [{ name: 'React', type: "devicon"}, { name: 'TypeScript', type: "devicon" }] },
+      { label: 'Styling', skills: [{ name: 'Tailwind', type: "simple" }, { name: 'CSS', type: "devicon" }] },
+      { label: 'Tooling & Workflow', skills: [{ name: 'Redux', type: "devicon" }, { name: 'Webpack', type: "devicon" }] },
+      { label: 'Backend & Data', skills: [{ name: 'Python', type: "devicon" }, { name: 'Docker', type: "devicon" }] },
+      { label: 'Emerging', emerging: true, skills: [{ name: 'WebGL', type: "text" }, { name: 'Pixi.js', type: "text" }] },
+      { label: 'Legacy', legacy: true, skills: [
+        { name: 'Flash', type: "text" }, { name: 'Flare3D', type: "text" }
+      ]},
+    ],
+  }),
 }))
 
 beforeEach(() => {
@@ -42,22 +56,20 @@ describe('Skills section', () => {
 
   it('renders text badge skills', () => {
     render(<Skills />)
-    expect(screen.getByText('Pixi.js')).toBeInTheDocument()
+    expect(screen.getByText('Flash')).toBeInTheDocument()
     expect(screen.getByText('WebGL')).toBeInTheDocument()
-    expect(screen.getByText('AmfPHP')).toBeInTheDocument()
+    expect(screen.getByText('Pixi.js')).toBeInTheDocument()
     expect(screen.getByText('Flare3D')).toBeInTheDocument()
   })
 
   it('renders correct number of skill rows', () => {
-    render(<Skills />)
-    // 3 animated rows — each has a divider between the two groups
+    render(<Skills />)    
     const dividers = document.querySelectorAll('.hidden.md\\:block.w-px')
     expect(dividers).toHaveLength(3)
   })
 
-  it('groups start hidden and animate in on intersection', async () => {
-    render(<Skills />)
-    // groups are opacity 0 initially — IntersectionObserver never fires in jsdom
+  it('groups start hidden and animate in on intersection', () => {
+    render(<Skills />)    
     const section = document.getElementById('skills')
     expect(section).toBeInTheDocument()
   })

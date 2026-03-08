@@ -27,7 +27,7 @@ describe('About section', () => {
 
   it('renders typewriter text after intersection', async () => {
     render(<About speed={0} />)
-
+    
     intersectionCallback([{ isIntersecting: true } as IntersectionObserverEntry])
 
     await waitFor(

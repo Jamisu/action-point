@@ -20,22 +20,19 @@ jest.mock('@/contexts/DataContext', () => ({
         tags: ['Flash', 'ActionScript 3'],
         legacy: true,
       },
-    ],
-    skillGroups: [],
-    contact: [],
-    projects: [],
-    isLoading: false,
-    error: null,
+    ]
   }),
 }))
 
+let intersectionCallback: Function
+
 beforeEach(() => {
   window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
-    callback([{ isIntersecting: true }])
+    intersectionCallback = callback
     return {
       observe: jest.fn(),
       disconnect: jest.fn(),
-      unobserve: jest.fn(),
+      unobserve: jest.fn()
     }
   })
 })
@@ -43,31 +40,37 @@ beforeEach(() => {
 describe('Experience section', () => {
   it('renders section label', () => {
     render(<Experience />)
+    intersectionCallback([{ isIntersecting: true }])
     expect(screen.getByText('Experience')).toBeInTheDocument()
   })
 
   it('renders section heading', () => {
     render(<Experience />)
+    intersectionCallback([{ isIntersecting: true }])
     expect(screen.getByText("Where I've Been")).toBeInTheDocument()
   })
 
   it('renders a job company name', () => {
     render(<Experience />)
+    intersectionCallback([{ isIntersecting: true }])
     expect(screen.getByText('Confidential · B2B Contract')).toBeInTheDocument()
   })
 
   it('renders a job role', () => {
     render(<Experience />)
+    intersectionCallback([{ isIntersecting: true }])
     expect(screen.getByText('Front-End Engineer')).toBeInTheDocument()
   })
 
   it('renders Flash era divider for legacy jobs', () => {
     render(<Experience />)
+    intersectionCallback([{ isIntersecting: true }])
     expect(screen.getByText(/Flash era/i)).toBeInTheDocument()
   })
 
   it('renders job tags', () => {
     render(<Experience />)
+    intersectionCallback([{ isIntersecting: true }])
     expect(screen.getByText('React')).toBeInTheDocument()
   })
 })
