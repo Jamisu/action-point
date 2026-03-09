@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { Project } from '@/types/types'
 import ProjectTile from '@/components/ui/ProjectTile'
+import ProjectModal from '@/components/ui/ProjectModal'
 
 export default function ProjectsPage() {
   const { projects } = useData()
@@ -23,14 +24,7 @@ export default function ProjectsPage() {
             <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">What I've Built</h2>
             <div className="w-16 h-0.5 bg-[#fbbf24] opacity-50" />
           </div>
-          {
-            projects.map((project, index) => (
-              <div key={index}>
-                <h3>{project.title}</h3>
-                <p>{project.shortDesc}</p>
-              </div>
-            ))
-          }
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <ProjectTile
@@ -41,6 +35,12 @@ export default function ProjectsPage() {
               />
             ))}
           </div>
+          {selected && (
+            <ProjectModal
+              project={selected}
+              onClose={() => setSelected(null)}
+            />
+          )}
         </div>
       </section>
     </main>
