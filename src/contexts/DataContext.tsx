@@ -24,7 +24,6 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-
       fetchData()
         .then(data => {
           setJobs(data.jobs)

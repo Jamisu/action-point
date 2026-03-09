@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { SkillGroup } from '@/types/types'
-import SkillCard from '@/components/SkillCard'
+import SkillCard from '@/components/ui/SkillCard'
 
 
 function GroupBlock({ group }: { group: SkillGroup }) {

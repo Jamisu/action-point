@@ -190,5 +190,15 @@
     }
   ],
 
-  "projects": []
+  "projects": [
+    {
+      "title": "Action-Point Portfolio",
+      "date": "2025",
+      "image": "/AP_logo.png",
+      "shortDesc": "This portfolio. Next.js 15, TypeScript, Tailwind, Jest.",
+      "fullDesc": "Built from scratch across multiple sessions. Centralized data layer, context-driven architecture, section-by-section animations, Leaflet map, custom preloader, tooltip system.",
+      "stack": ["Next.js", "TypeScript", "React", "Tailwind", "Jest"],
+      "url": "https://action-point.vercel.app"
+    }
+  ]
 }
