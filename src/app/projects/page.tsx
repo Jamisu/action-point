@@ -1,11 +1,13 @@
 'use client'
 
+import { useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { Project } from '@/types/types'
 import ProjectTile from '@/components/ui/ProjectTile'
 
 export default function ProjectsPage() {
   const { projects } = useData()
+  const [selected, setSelected] = useState<Project | null>(null)
 
   return (
     <main className="bg-[#0a0e1a] min-h-screen">
@@ -29,6 +31,16 @@ export default function ProjectsPage() {
               </div>
             ))
           }
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, i) => (
+              <ProjectTile
+                key={project.title}
+                project={project}
+                index={i}
+                onClick={() => setSelected(project)}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </main>
