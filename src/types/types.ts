@@ -40,12 +40,12 @@ export interface ContactLink {
 
 export interface Project {
   title: string
-  description: string
-  tags: string[]
+  date: string
+  image: string
+  shortDesc: string
+  fullDesc: string
+  stack: string[]
   url?: string
-  repo?: string
-  image?: string
-  featured?: boolean
 }
 
 // ─── ROOT ────────────────────────────────────────────────────────────────────
