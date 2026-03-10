@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const lines = [
   { text: 'John Doe', delay: 0, className: 'text-5xl md:text-7xl font-bold font-sans text-white tracking-tight' },
@@ -46,36 +47,44 @@ function AnimatedLine({ text, delay, className }: HomeLine) {
 
 export default function HomePage() {
   return (
-    <div
-      id="home"
-      className="min-h-screen flex flex-col justify-center items-center px-6 pt-16 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+    <motion.div
+      key="home"
+      initial={{ x: '100%', opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: '-100%', opacity: 0 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
-      <div className="max-w-4xl mx-auto w-full flex flex-col gap-6 text-center">
-        {lines.map((line) => (
-          <AnimatedLine key={line.text} {...line} />
-        ))}
+      <div
+        id="home"
+        className="min-h-screen flex flex-col justify-center items-center px-6 pt-16 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+      >
+        <div className="max-w-4xl mx-auto w-full flex flex-col gap-6 text-center">
+          {lines.map((line) => (
+            <AnimatedLine key={line.text} {...line} />
+          ))}
 
-        <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50 mx-auto" />
+          <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50 mx-auto" />
 
-        <div
-          className="flex gap-4 flex-wrap justify-center opacity-0"
-          style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
-        >
-          <Link
-            href="#projects"
-            className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[#4f9cf9] text-[#0a0e1a] font-bold rounded hover:bg-white transition-colors focus:outline-none"
+          <div
+            className="flex gap-4 flex-wrap justify-center opacity-0"
+            style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
           >
-            View Projects
-          </Link>
-          <Link
-            href="#contact"
-            className="font-mono text-sm uppercase tracking-widest px-6 py-3 border border-[#4f9cf9] text-[#4f9cf9] rounded hover:bg-[#4f9cf9] hover:text-[#0a0e1a] transition-colors"
-          >
-            Contact Me
-          </Link>
+            <Link
+              href="#projects"
+              className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[#4f9cf9] text-[#0a0e1a] font-bold rounded hover:bg-white transition-colors focus:outline-none"
+            >
+              View Projects
+            </Link>
+            <Link
+              href="#contact"
+              className="font-mono text-sm uppercase tracking-widest px-6 py-3 border border-[#4f9cf9] text-[#4f9cf9] rounded hover:bg-[#4f9cf9] hover:text-[#0a0e1a] transition-colors"
+            >
+              Contact Me
+            </Link>
+          </div>
+
         </div>
-
       </div>
-    </div>
+    </motion.div>
   )
 }

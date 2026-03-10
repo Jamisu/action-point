@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { Job } from '@/types/types'
+import { motion } from 'framer-motion'
 
 function JobEntry({
   job,
@@ -107,25 +108,33 @@ export default function ExperiencePage() {
   const firstLegacyIndex = jobs.findIndex((j) => j.legacy)
 
   return (
-    <div
-      id="experience"
-      className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0a0e1a] to-[#0f1e35]"
+    <motion.div
+      key="experience"
+      initial={{ x: '100%', opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: '-100%', opacity: 0 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
-      <div className="max-w-4xl mx-auto w-full">
-        <div className="flex flex-col gap-4 mb-20">
-          <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Experience</p>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Where I've Been</h2>
-          <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
-        </div>
+      <div
+        id="experience"
+        className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0a0e1a] to-[#0f1e35]"
+      >
+        <div className="max-w-4xl mx-auto w-full">
+          <div className="flex flex-col gap-4 mb-20">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Experience</p>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Where I've Been</h2>
+            <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
+          </div>
 
-        <div className="relative">
-          <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#4f9cf9] via-[#4f9cf9]/40 to-[#1f2d45]" />
+          <div className="relative">
+            <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#4f9cf9] via-[#4f9cf9]/40 to-[#1f2d45]" />
 
-          {jobs.map((job, i) => (
-            <JobEntry key={i} job={job} index={i} isLegacyFirst={i === firstLegacyIndex} />
-          ))}
+            {jobs.map((job, i) => (
+              <JobEntry key={i} job={job} index={i} isLegacyFirst={i === firstLegacyIndex} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

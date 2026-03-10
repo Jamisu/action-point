@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { MapPin, Mail, Phone, Linkedin, Github, LucideProps } from 'lucide-react'
 import { useData } from '@/contexts/DataContext'
 import { SiBehance, SiSoundcloud } from '@icons-pack/react-simple-icons'
+import { motion } from 'framer-motion'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
 
@@ -139,22 +140,30 @@ function AnimatedInfo() {
 
 export default function ContactPage() {
   return (
-    <div
-      id="contact"
-      className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+    <motion.div
+      key="contact"
+      initial={{ x: '100%', opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: '-100%', opacity: 0 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
-      <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
-        <div className="flex flex-col gap-4">
-          <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Contact</p>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Get In Touch</h2>
-          <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
-        </div>
+      <div
+        id="contact"
+        className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+      >
+        <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
+          <div className="flex flex-col gap-4">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Contact</p>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Get In Touch</h2>
+            <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
+          </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          <AnimatedMap />
-          <AnimatedInfo />
+          <div className="flex flex-col lg:flex-row gap-8">
+            <AnimatedMap />
+            <AnimatedInfo />
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
