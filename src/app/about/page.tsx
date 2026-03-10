@@ -57,13 +57,7 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
   }, [])
 
   return (
-    <motion.div
-      key="about"
-      initial={{ x: '100%', opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: '-100%', opacity: 0 }}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
-    >
+    
       <div
         id="about"
         className="min-h-screen flex flex-col justify-start px-6 pb-24"
@@ -87,6 +81,6 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
           </div>
         </div>
       </div>
-    </motion.div>
+
   )
 }

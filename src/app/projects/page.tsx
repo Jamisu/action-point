@@ -12,13 +12,7 @@ export default function ProjectsPage() {
   const [selected, setSelected] = useState<Project | null>(null)
 
   return (
-    <motion.div
-      key="projects"
-      initial={{ x: '100%', opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: '-100%', opacity: 0 }}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
-    >
+
       <div
         id="projects"
         className="min-h-screen flex flex-col justify-start px-6 pb-24"
@@ -50,6 +44,6 @@ export default function ProjectsPage() {
           )}
         </div>
       </div>
-    </motion.div>
+
   )
 }

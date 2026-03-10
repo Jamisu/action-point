@@ -4,16 +4,8 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTooltip } from '@/contexts/TooltipContext'
+import { navLinks } from '@/lib/navLinks'
 
-const navLinks = [
-  { label: 'Home',       href: '/home' },
-  { label: 'About',      href: '/about' },
-  { label: 'Skills',     href: '/skills' },
-  { label: 'Experience', href: '/experience' },
-  { label: 'Projects',   href: '/projects' },
-  { label: 'Contact',    href: '/contact' },
-  { label: 'References', href: 'https://references-action-point.vercel.app/' }
-]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)

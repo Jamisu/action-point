@@ -47,13 +47,7 @@ function AnimatedLine({ text, delay, className }: HomeLine) {
 
 export default function HomePage() {
   return (
-    <motion.div
-      key="home"
-      initial={{ x: '100%', opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: '-100%', opacity: 0 }}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
-    >
+    
       <div
         id="home"
         className="min-h-screen flex flex-col justify-center items-center px-6 pt-16"
@@ -85,6 +79,5 @@ export default function HomePage() {
 
         </div>
       </div>
-    </motion.div>
   )
 }

@@ -6,7 +6,7 @@ import Preloader from '@/components/Preloader'
 import { TooltipProvider } from '@/contexts/TooltipContext'
 import { DataProvider } from '@/contexts/DataContext'
 import 'devicon/devicon.min.css'
-import { AnimatePresence } from 'framer-motion'
+
 import PageTransition from '@/components/PageTransition'
 
 const geistSans = Geist({
@@ -36,11 +36,11 @@ export default function RootLayout({
           <DataProvider>
             <Navbar />
             <Preloader />
-            <AnimatePresence mode="wait">
+
               <PageTransition>
                 {children}
               </PageTransition>
-            </AnimatePresence>
+
           </DataProvider>
         </TooltipProvider>
       </body>

@@ -83,13 +83,7 @@ export default function SkillsPage() {
   }, [])
 
   return (
-    <motion.div
-      key="skills"
-      initial={{ x: '100%', opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: '-100%', opacity: 0 }}
-      transition={{ duration: 0.4, ease: 'easeInOut' }}
-    >
+
       <div
         id="skills"
         className="min-h-screen flex flex-col justify-center px-6 py-24"
@@ -108,6 +102,6 @@ export default function SkillsPage() {
           </div>
         </div>
       </div>
-    </motion.div>
+
   )
 }
