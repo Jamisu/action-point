@@ -29,7 +29,7 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, i) => (
               <ProjectTile
-                key={project.title}
+                key={project.title + i}
                 project={project}
                 index={i}
                 onClick={() => setSelected(project)}
