@@ -28,6 +28,8 @@ export default function Navbar() {
 
   function handleNavClick(href: string) {
     navigate(href, pathname)
+    // TODO: debounce entire menu for the animation time or chain it with the transition
+    // TODO: make current navButton active, deactivate others
   }
 
   return (

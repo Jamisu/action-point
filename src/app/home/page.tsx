@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 const lines = [
-  { text: 'John Doe', delay: 0, className: 'text-5xl md:text-7xl font-bold font-sans text-white tracking-tight' },
+  { text: 'Action Point', delay: 0, className: 'text-5xl md:text-7xl font-bold font-sans text-white tracking-tight' },
   { text: 'Front-End Engineer', delay: 150, className: 'text-xl md:text-2xl font-mono text-[#4f9cf9] tracking-widest uppercase' },
-  { text: '13 years. Flash to Next.js.', delay: 300, className: 'text-base md:text-lg text-[#64748b] font-mono' },
+  { text: '15 years. Flash to Next.js.', delay: 300, className: 'text-base md:text-lg text-[#64748b] font-mono' },
   { text: 'I build things that work, look right,\nand make sense to humans.', delay: 450, className: 'text-base md:text-lg text-[#94a3b8]' },
 ]
 
