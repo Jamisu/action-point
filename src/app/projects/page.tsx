@@ -5,7 +5,6 @@ import { useData } from '@/contexts/DataContext'
 import { Project } from '@/types/types'
 import ProjectTile from '@/components/ui/ProjectTile'
 import ProjectModal from '@/components/ui/ProjectModal'
-import { motion } from 'framer-motion'
 
 export default function ProjectsPage() {
   const { projects } = useData()

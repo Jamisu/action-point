@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from 'react'
 import { MapPin, Mail, Phone, Linkedin, Github, LucideProps } from 'lucide-react'
 import { useData } from '@/contexts/DataContext'
 import { SiBehance, SiSoundcloud } from '@icons-pack/react-simple-icons'
-import { motion } from 'framer-motion'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
 

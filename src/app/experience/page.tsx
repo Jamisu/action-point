@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { Job } from '@/types/types'
-import { motion } from 'framer-motion'
 
 function JobEntry({
   job,

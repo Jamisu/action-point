@@ -64,13 +64,13 @@ export default function HomePage() {
             style={{ animation: 'fadeIn 0.7s ease 0.6s both' }}
           >
             <Link
-              href="#projects"
+              href="/projects"
               className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[#4f9cf9] text-[#0a0e1a] font-bold rounded hover:bg-white transition-colors focus:outline-none"
             >
               View Projects
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="font-mono text-sm uppercase tracking-widest px-6 py-3 border border-[#4f9cf9] text-[#4f9cf9] rounded hover:bg-[#4f9cf9] hover:text-[#0a0e1a] transition-colors"
             >
               Contact Me
