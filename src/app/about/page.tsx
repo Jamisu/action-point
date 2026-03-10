@@ -66,7 +66,7 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
     >
       <div
         id="about"
-        className="min-h-screen flex flex-col justify-start px-6 pb-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+        className="min-h-screen flex flex-col justify-start px-6 pb-24"
         style={{ paddingTop: 'clamp(120px, 15vw, 220px)' }}
       >
         <div className="max-w-4xl mx-auto w-full flex flex-col gap-8">

@@ -149,7 +149,7 @@ export default function ContactPage() {
     >
       <div
         id="contact"
-        className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+        className="min-h-screen flex flex-col justify-center px-6 py-24"
       >
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
           <div className="flex flex-col gap-4">

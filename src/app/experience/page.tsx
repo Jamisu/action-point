@@ -117,7 +117,7 @@ export default function ExperiencePage() {
     >
       <div
         id="experience"
-        className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0a0e1a] to-[#0f1e35]"
+        className="min-h-screen flex flex-col justify-center px-6 py-24"
       >
         <div className="max-w-4xl mx-auto w-full">
           <div className="flex flex-col gap-4 mb-20">

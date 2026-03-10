@@ -7,6 +7,7 @@ import { TooltipProvider } from '@/contexts/TooltipContext'
 import { DataProvider } from '@/contexts/DataContext'
 import 'devicon/devicon.min.css'
 import { AnimatePresence } from 'framer-motion'
+import PageTransition from '@/components/PageTransition'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,13 +31,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-[#0a0e1a] to-[#0f1e35] min-h-screen`}>
         <TooltipProvider>
           <DataProvider>
             <Navbar />
             <Preloader />
             <AnimatePresence mode="wait">
-              {children}
+              <PageTransition>
+                {children}
+              </PageTransition>
             </AnimatePresence>
           </DataProvider>
         </TooltipProvider>

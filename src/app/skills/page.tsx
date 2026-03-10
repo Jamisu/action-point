@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { SkillGroup } from '@/types/types'
 import SkillCard from '@/components/ui/SkillCard'
+import { motion } from 'framer-motion'
 
 function GroupBlock({ group }: { group: SkillGroup }) {
   return (
@@ -67,7 +68,7 @@ function AnimatedRow({
       }}
     >
       <GroupBlock group={left} />
-      <div className="hidden md:block w-px bg-[#1f2d45] self-stretch" />
+      <div className="hidden md:block w-px self-stretch" />
       <GroupBlock group={right} />
     </div>
   )
@@ -82,23 +83,31 @@ export default function SkillsPage() {
   }, [])
 
   return (
-    <div
-      id="skills"
-      className="min-h-screen flex flex-col justify-center px-6 py-24 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+    <motion.div
+      key="skills"
+      initial={{ x: '100%', opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: '-100%', opacity: 0 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
-      <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
-        <div className="flex flex-col gap-4">
-          <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Skills</p>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">What I Work With</h2>
-          <div className="w-16 h-0.5 bg-[#fbbf24] opacity-50" />
-        </div>
+      <div
+        id="skills"
+        className="min-h-screen flex flex-col justify-center px-6 py-24"
+      >
+        <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
+          <div className="flex flex-col gap-4">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Skills</p>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">What I Work With</h2>
+            <div className="w-16 h-0.5 bg-[#fbbf24] opacity-50" />
+          </div>
 
-        <div className="flex flex-col gap-16">
-          {rows.map(([left, right], i) => (
-            <AnimatedRow key={left.label} left={left} right={right} rowIndex={i} />
-          ))}
+          <div className="flex flex-col gap-16">
+            {rows.map(([left, right], i) => (
+              <AnimatedRow key={left.label} left={left} right={right} rowIndex={i} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

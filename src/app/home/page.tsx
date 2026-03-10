@@ -56,7 +56,7 @@ export default function HomePage() {
     >
       <div
         id="home"
-        className="min-h-screen flex flex-col justify-center items-center px-6 pt-16 bg-gradient-to-b from-[#0f1e35] to-[#0a0e1a]"
+        className="min-h-screen flex flex-col justify-center items-center px-6 pt-16"
       >
         <div className="max-w-4xl mx-auto w-full flex flex-col gap-6 text-center">
           {lines.map((line) => (
