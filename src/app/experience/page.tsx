@@ -121,7 +121,7 @@ export default function ExperiencePage() {
           </div>
 
           <div className="relative">
-            <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#4f9cf9] via-[#4f9cf9]/40 to-[#1f2d45]" />
+            <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#4f9cf9] via-[#4f9cf9]/40 to-[#0f1e35]" />
 
             {jobs.map((job, i) => (
               <JobEntry key={i} job={job} index={i} isLegacyFirst={i === firstLegacyIndex} />

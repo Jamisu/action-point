@@ -1,32 +1,46 @@
 'use client'
 
-import { createContext, useContext, useRef } from 'react'
+import { createContext, useContext, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { navLinks } from '@/lib/navLinks'
 
 interface TransitionContextType {
-  getDirection: () => number
-  setDirection: (from: string, to: string) => void
+  direction: number
+  isExiting: boolean
+  isFirstLoad: boolean
+  navigate: (href: string, currentPath: string) => void
 }
 
 const TransitionContext = createContext<TransitionContextType>({
-  getDirection: () => 1,
-  setDirection: () => {},
+  direction: 1,
+  isExiting: false,
+  isFirstLoad: true,
+  navigate: () => {},
 })
 
-export function TransitionProvider({ children }: { children: React.ReactNode }) {
-  const directionRef = useRef(1)
+export const DURATION_EXIT = 100
+export const DURATION_ENTER = 500
 
-  const setDirection = (from: string, to: string) => {
+export function TransitionProvider({ children }: { children: React.ReactNode }) {
+  const [direction, setDirection] = useState(1)
+  const [isExiting, setIsExiting] = useState(false)
+  const router = useRouter()
+  const isFirstLoad = useRef(true)
+
+  function navigate(href: string, currentPath: string) {
+    isFirstLoad.current = false
     const order = navLinks.map(l => l.href)
-    const fromIndex = order.indexOf(from)
-    const toIndex = order.indexOf(to)
-    directionRef.current = toIndex > fromIndex ? 1 : -1
+    const dir = order.indexOf(href) > order.indexOf(currentPath) ? 1 : -1
+    setDirection(dir)
+    setIsExiting(true)
+    setTimeout(() => {
+      setIsExiting(false)
+      router.push(href)
+    }, isExiting ? DURATION_EXIT : DURATION_ENTER)
   }
 
-  const getDirection = () => directionRef.current
-
   return (
-    <TransitionContext.Provider value={{ getDirection, setDirection }}>
+    <TransitionContext.Provider value={{ direction, isExiting, isFirstLoad: isFirstLoad.current, navigate }}>
       {children}
     </TransitionContext.Provider>
   )

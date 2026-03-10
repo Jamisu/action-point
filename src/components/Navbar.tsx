@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useTooltip } from '@/contexts/TooltipContext'
 import { useTransition } from '@/contexts/TransitionContext'
 import { navLinks } from '@/lib/navLinks'
@@ -12,10 +12,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const { show, hide } = useTooltip()
-  const { setDirection } = useTransition()
+  const { navigate } = useTransition()
   const refTooltipRef = useRef<HTMLLIElement>(null)
   const pathname = usePathname()
-  const router = useRouter()
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -28,8 +27,7 @@ export default function Navbar() {
   }, [])
 
   function handleNavClick(href: string) {
-    setDirection(pathname, href)
-    router.push(href)
+    navigate(href, pathname)
   }
 
   return (
@@ -85,7 +83,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* MOBILE MENU */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
           <ul className="flex flex-col px-6 pb-6 gap-4 border-t border-[#1f2d45]">
             {navLinks.map((link) => (
