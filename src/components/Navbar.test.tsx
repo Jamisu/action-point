@@ -19,13 +19,13 @@ describe('Navbar component', () => {
     render(<Navbar />)
 
     const expectedLinks = [
-      { name: /home/i, href: '#home' },
-      { name: /about/i, href: '#about' },
-      { name: /skills/i, href: '#skills' },
-      { name: /experience/i, href: '#experience' },
-      { name: /projects/i, href: '#projects' },
-      { name: /contact/i, href: '#contact' },
-      { name: /references/i, href: '/references' },
+      { name: /home/i, href: '/home' },
+      { name: /about/i, href: '/about' },
+      { name: /skills/i, href: '/skills' },
+      { name: /experience/i, href: '/experience' },
+      { name: /projects/i, href: '/projects' },
+      { name: /contact/i, href: '/contact' },
+      { name: /references/i, href: 'https://references-action-point.vercel.app/' },
     ]
 
     expectedLinks.forEach(({ name, href }) => {

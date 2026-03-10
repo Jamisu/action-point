@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Home from './Home'
+import Home from '@/app/home/page'
 
 describe('Home section', () => {
   it('renders Home text content', () => {
@@ -29,7 +29,7 @@ describe('Home section', () => {
   it('has correct section anchor', () => {
     const { container } = render(<Home />)
 
-    const section = container.querySelector('section#home')
-    expect(section).toBeInTheDocument()
+    const homeAnchor = container.querySelector('#home')
+    expect(homeAnchor).toBeInTheDocument()
   })
 })

@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react'
-import About from './About'
+import About from '@/app/about/page'
 
 let intersectionCallback: (entries: Partial<IntersectionObserverEntry>[]) => void
 
@@ -27,8 +27,10 @@ describe('About section', () => {
 
   it('renders typewriter text after intersection', async () => {
     render(<About speed={0} />)
-    
-    intersectionCallback([{ isIntersecting: true } as IntersectionObserverEntry])
+
+    await waitFor(() => {
+      intersectionCallback([{ isIntersecting: true } as IntersectionObserverEntry])
+    })
 
     await waitFor(
       () => expect(screen.getByText(/front-end engineer/i)).toBeInTheDocument(),

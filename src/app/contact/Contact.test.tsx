@@ -1,5 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import Contact from './Contact'
+import Contact from '@/app/contact/page'
+
+jest.mock('next/dynamic', () => {
+  return () => {
+    return function DynamicComponent(props: any) {
+      const mod = require('@/components/ui/ContactMap')
+      const Comp = mod.default ?? mod
+      return <Comp {...props} />
+    }
+  }
+})
 
 jest.mock('@/components/ui/ContactMap', () => {
   const MockMap = () => <div data-testid="contact-map" />

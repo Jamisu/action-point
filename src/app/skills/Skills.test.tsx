@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Skills from './Skills'
+import Skills from '@/app/skills/page'
 
 jest.mock('@/contexts/TooltipContext', () => ({
   useTooltip: () => ({ show: jest.fn(), hide: jest.fn() }),
