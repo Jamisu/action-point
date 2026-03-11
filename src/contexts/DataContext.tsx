@@ -24,16 +24,34 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-      fetchData()
-        .then(data => {
-          setJobs(data.jobs)
-          setSkillGroups(data.skillGroups)
-          setContact(data.contact)
-          setProjects(data.projects)
-        })
-        .catch(err => setError(err.message))
-        .finally(() => setIsLoading(false))
-    }, [])
+  fetchData()
+    .then(async (data) => {
+      setJobs(data.jobs)
+      setSkillGroups(data.skillGroups)
+      setContact(data.contact)
+      setProjects(data.projects)
+
+      // NO CACHING — always re-fetches on mount (for human-testing purposes)
+      // To cache: use a module-level Set of already-loaded paths
+      const imagePaths = data.projects.map((p) => p.image).filter(Boolean)
+      await Promise.all(
+        imagePaths.map(
+          (src) =>
+            new Promise<void>((resolve) => {
+              const img = new window.Image()
+              img.src = src
+              img.onload = () => resolve()
+              img.onerror = () => {
+                console.warn(`[DataContext] failed to preload: ${src}`)
+                resolve() // don't block on broken images
+              }
+            })
+        )
+      )
+    })
+    .catch((err) => setError(err.message))
+    .finally(() => setIsLoading(false)) // fires only after images are done
+  }, [])
 
   return (
     <DataContext.Provider value={{ jobs, skillGroups, contact, projects, isLoading, error }}>

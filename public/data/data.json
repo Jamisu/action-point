@@ -192,18 +192,18 @@
 
   "projects": [
     {
-      "title": "Project Title One",
-      "date": "2026",
-      "image": "/AP_logo.png",
+      "title": "Chaotec Portfolio",
+      "date": "2022",
+      "image": "/images/1_chaotec.jpg",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
       "stack": ["React", "TypeScript", "MaterialUI", "Docker"],
-      "url": "https://example.com"
+      "url": "https://jamisu.github.io/my_portfolio/"
     },
     {
-      "title": "Project Title Two",
-      "date": "2025",
-      "image": "/AP_logo.png",
+      "title": "Developer References",
+      "date": "2026",
+      "image": "/images/2_ref.jpg",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
       "stack": ["React", "Google Ads"]
@@ -211,7 +211,7 @@
     {
       "title": "Project Title Three",
       "date": "2024",
-      "image": "/AP_logo.png",
+      "image": "/images/AP_logo.png",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
       "stack": ["Preact", "TypeScript", "Python", "CI/CD", "Vanilla JS"],
