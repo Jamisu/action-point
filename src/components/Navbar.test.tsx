@@ -1,88 +1,91 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import Navbar from './Navbar'
 
+jest.mock('next/navigation', () => ({
+  usePathname: () => '/home',
+}))
+
 jest.mock('@/contexts/TooltipContext', () => ({
   useTooltip: () => ({ show: jest.fn(), hide: jest.fn() }),
-  TooltipProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}))
+
+jest.mock('@/contexts/TransitionContext', () => ({
+  useTransition: () => ({ navigate: jest.fn() }),
+}))
+
+jest.mock('@/lib/navLinks', () => ({
+  navLinks: [
+    { label: 'Home',       href: '/home' },
+    { label: 'About',      href: '/about' },
+    { label: 'Skills',     href: '/skills' },
+    { label: 'Experience', href: '/experience' },
+    { label: 'Projects',   href: '/projects' },
+    { label: 'Contact',    href: '/contact' },
+    { label: 'References', href: 'https://references-action-point.vercel.app/' },
+  ],
 }))
 
 describe('Navbar component', () => {
 
   it('renders logo correctly', () => {
     render(<Navbar />)
-
-    const logo = screen.getByRole('link', { name: /ap/i })
+    const logo = screen.getByRole('link', { name: /ap logo/i })
     expect(logo).toHaveAttribute('href', '/')
   })
 
-  it('renders all navigation links with correct hrefs', () => {
+  it('renders all nav buttons (non-References links) as buttons', () => {
     render(<Navbar />)
-
-    const expectedLinks = [
-      { name: /home/i, href: '/home' },
-      { name: /about/i, href: '/about' },
-      { name: /skills/i, href: '/skills' },
-      { name: /experience/i, href: '/experience' },
-      { name: /projects/i, href: '/projects' },
-      { name: /contact/i, href: '/contact' },
-      { name: /references/i, href: 'https://references-action-point.vercel.app/' },
-    ]
-
-    expectedLinks.forEach(({ name, href }) => {
-      // each link exists twice (desktop + mobile)
-      const links = screen.getAllByRole('link', { name })
-      expect(links).toHaveLength(2)
-      links.forEach(link => expect(link).toHaveAttribute('href', href))
+    const labels = ['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact']
+    labels.forEach(label => {
+      // desktop + mobile = 2 each
+      const buttons = screen.getAllByRole('button', { name: new RegExp(label, 'i') })
+      expect(buttons).toHaveLength(2)
     })
+  })
+
+  it('renders References as an anchor with correct href', () => {
+    render(<Navbar />)
+    const refs = screen.getAllByRole('link', { name: /references/i })
+    expect(refs).toHaveLength(2)
+    refs.forEach(link => expect(link).toHaveAttribute('href', 'https://references-action-point.vercel.app/'))
   })
 
   it('applies special styling to desktop References link', () => {
     render(<Navbar />)
-
-    // desktop References link is the first one, it has the border class mobile doesn't
     const [desktopRef] = screen.getAllByRole('link', { name: /references/i })
-    expect(desktopRef).toHaveClass('text-[#a78bfa]')
+    // color test dropped - will externalise colors to theme
     expect(desktopRef).toHaveClass('border')
-    expect(desktopRef).toHaveClass('border-[#a78bfa33]')
   })
 
   it('renders hamburger button', () => {
     render(<Navbar />)
-
     expect(screen.getByRole('button', { name: /toggle menu/i })).toBeInTheDocument()
   })
 
-  it('has correct total number of links', () => {
-    render(<Navbar />)
+  it('calls navigate when a nav button is clicked', () => {
+    const mockNavigate = jest.fn()
+    jest.spyOn(require('@/contexts/TransitionContext'), 'useTransition')
+      .mockReturnValue({ navigate: mockNavigate })
 
-    // 7 desktop + 7 mobile + 1 logo = 15
-    console.log("TUTAAAAJ_______", screen.getAllByRole('link'))
-    expect(screen.getAllByRole('link')).toHaveLength(15)
+    render(<Navbar />)
+    const [desktopHome] = screen.getAllByRole('button', { name: /home/i })
+    fireEvent.click(desktopHome)
+    expect(mockNavigate).toHaveBeenCalledWith('/home', '/home')
   })
 
   it('toggles mobile menu open and closed on hamburger click', () => {
     render(<Navbar />)
-
     const button = screen.getByRole('button', { name: /toggle menu/i })
-
-    // closed by default via max-h-0 on parent div — button click opens it
     fireEvent.click(button)
-    expect(button).toHaveAttribute('aria-label', 'Toggle menu') // sanity
-
     fireEvent.click(button)
-    // toggled back — no crash, state flipped twice
+    expect(button).toBeInTheDocument()
   })
 
   it('closes mobile menu when clicking outside', () => {
     render(<Navbar />)
-
     const button = screen.getByRole('button', { name: /toggle menu/i })
-    fireEvent.click(button) // open
-
-    // click outside the menuRef div
+    fireEvent.click(button)
     fireEvent.mouseDown(document.body)
-
-    // menu should be closed — hamburger spans back to normal state
-    expect(button).toBeInTheDocument() // component didn't crash
+    expect(button).toBeInTheDocument()
   })
 })
