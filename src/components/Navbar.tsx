@@ -27,9 +27,8 @@ export default function Navbar() {
   }, [])
 
   function handleNavClick(href: string) {
+    if (href === pathname) return
     navigate(href, pathname)
-    // TODO: debounce entire menu for the animation time or chain it with the transition
-    // TODO: make current navButton active, deactivate others
   }
 
   return (
@@ -65,8 +64,11 @@ export default function Navbar() {
                 ) : (
                   <button
                     onClick={() => handleNavClick(link.href)}
-                    className="font-mono text-sm uppercase tracking-widest transition-colors hover:text-[#4f9cf9] text-[#64748b] bg-transparent border-none cursor-pointer"
-                  >
+                    className={`font-mono text-sm uppercase tracking-widest transition-colors bg-transparent border-none cursor-pointer
+                    ${pathname === link.href
+                      ? 'text-[#fbbf24]'
+                      : 'text-[#64748b] hover:text-[#4f9cf9]'
+                    }`}>
                     {link.label}
                   </button>
                 )}
