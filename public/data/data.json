@@ -192,49 +192,105 @@
 
   "projects": [
     {
-      "title": "Action-Point Portfolio",
-      "date": "2025",
+      "title": "Project Title One",
+      "date": "2026",
       "image": "/AP_logo.png",
-      "shortDesc": "This portfolio. Next.js 15, TypeScript, Tailwind, Jest.",
-      "fullDesc": "Built from scratch across multiple sessions. Centralized data layer, context-driven architecture, section-by-section animations, Leaflet map, custom preloader, tooltip system.",
-      "stack": ["Next.js", "TypeScript", "React", "Tailwind", "Jest"],
-      "url": "https://action-point.vercel.app"
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["React", "TypeScript", "MaterialUI", "Docker"],
+      "url": "https://example.com"
     },
     {
-      "title": "Action-Point Portfolio",
+      "title": "Project Title Two",
       "date": "2025",
       "image": "/AP_logo.png",
-      "shortDesc": "This portfolio. Next.js 15, TypeScript, Tailwind, Jest.",
-      "fullDesc": "Built from scratch across multiple sessions. Centralized data layer, context-driven architecture, section-by-section animations, Leaflet map, custom preloader, tooltip system.",
-      "stack": ["Next.js", "TypeScript", "React", "Tailwind", "Jest"],
-      "url": "https://action-point.vercel.app"
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["React", "Google Ads"]
     },
     {
-      "title": "Action-Point Portfolio",
-      "date": "2025",
+      "title": "Project Title Three",
+      "date": "2024",
       "image": "/AP_logo.png",
-      "shortDesc": "This portfolio. Next.js 15, TypeScript, Tailwind, Jest.",
-      "fullDesc": "Built from scratch across multiple sessions. Centralized data layer, context-driven architecture, section-by-section animations, Leaflet map, custom preloader, tooltip system.",
-      "stack": ["Next.js", "TypeScript", "React", "Tailwind", "Jest"],
-      "url": "https://action-point.vercel.app"
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Preact", "TypeScript", "Python", "CI/CD", "Vanilla JS"],
+      "url": "https://example.com"
     },
     {
-      "title": "Action-Point Portfolio",
-      "date": "2025",
+      "title": "Project Title Four",
+      "date": "2023",
       "image": "/AP_logo.png",
-      "shortDesc": "This portfolio. Next.js 15, TypeScript, Tailwind, Jest.",
-      "fullDesc": "Built from scratch across multiple sessions. Centralized data layer, context-driven architecture, section-by-section animations, Leaflet map, custom preloader, tooltip system.",
-      "stack": ["Next.js", "TypeScript", "React", "Tailwind", "Jest"],
-      "url": "https://action-point.vercel.app"
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Java", "Python"]
     },
     {
-      "title": "Action-Point Portfolio",
-      "date": "2025",
+      "title": "Project Title Five",
+      "date": "2022",
       "image": "/AP_logo.png",
-      "shortDesc": "This portfolio. Next.js 15, TypeScript, Tailwind, Jest.",
-      "fullDesc": "Built from scratch across multiple sessions. Centralized data layer, context-driven architecture, section-by-section animations, Leaflet map, custom preloader, tooltip system.",
-      "stack": ["Next.js", "TypeScript", "React", "Tailwind", "Jest"],
-      "url": "https://action-point.vercel.app"
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["React", "Angular", "Python", "REST"],
+      "url": "https://example.com"
+    },
+    {
+      "title": "Project Title Six",
+      "date": "2021",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "JavaScript"]
+    },
+    {
+      "title": "Project Title Seven",
+      "date": "2020",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "Mobile"],
+      "url": "https://example.com"
+    },
+    {
+      "title": "Project Title Eight",
+      "date": "2019",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "Video"]
+    },
+    {
+      "title": "Project Title Nine",
+      "date": "2018",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "Team Lead"]
+    },
+    {
+      "title": "Project Title Ten",
+      "date": "2017",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "Multimedia"]
+    },
+    {
+      "title": "Project Title Eleven",
+      "date": "2016",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "AmfPHP", "Web"],
+      "url": "https://example.com"
+    },
+    {
+      "title": "Project Title Twelve",
+      "date": "2015",
+      "image": "/AP_logo.png",
+      "shortDesc": "Short description.",
+      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "stack": ["Flash", "ActionScript 3", "Multimedia"]
     }
   ]
 }

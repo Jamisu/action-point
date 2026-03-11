@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { Navbar } from './Navbar'
+import Navbar from './Navbar'
 
 jest.mock('@/contexts/TooltipContext', () => ({
   useTooltip: () => ({ show: jest.fn(), hide: jest.fn() }),
@@ -56,6 +56,7 @@ describe('Navbar component', () => {
     render(<Navbar />)
 
     // 7 desktop + 7 mobile + 1 logo = 15
+    console.log("TUTAAAAJ_______", screen.getAllByRole('link'))
     expect(screen.getAllByRole('link')).toHaveLength(15)
   })
 

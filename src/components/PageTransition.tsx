@@ -12,9 +12,9 @@ export default function PageTransition({ children }: { children: React.ReactNode
   return (
     <motion.div
       key={pathname}
-      initial={{ x: isFirstLoad ? 0 : (direction > 0 ? '100%' : '-100%') }}
-      animate={{ x: isExiting ? (direction > 0 ? '-100%' : '100%') : 0 }}
-      transition={{ duration: isExiting ? DURATION_EXIT/1000 : DURATION_ENTER/1000, ease: 'easeInOut' }}
+      initial={{ x: isFirstLoad ? 0 : (direction > 0 ? '50%' : '-50%')}}
+      animate={{ x: isExiting ? (direction > 0 ? '-50%' : '50%') : 0, opacity: isExiting ? 0 : 1 }}
+      transition={{ duration: isExiting ? DURATION_EXIT/1000 : DURATION_ENTER/1000, ease: 'easeOut' }}
       style={{ width: '100%', minHeight: '100vh' }}
     >
       {children}
