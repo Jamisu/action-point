@@ -15,7 +15,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       initial={{ scale: isFirstLoad ? 1 : 0.80, opacity: 1}}
       animate={{ scale: isExiting ? 0.80 : 1, opacity: isExiting ? 0 : 1 }}
       transition={{ duration: isExiting ? DURATION_EXIT/1000 : DURATION_ENTER/1000, ease: 'easeOut' }}
-      style={{ width: '100%', minHeight: '100vh', transformOrigin: '0 0' }}
+      style={{ width: '100%', minHeight: '100vh', transformOrigin: 'center' }}
     >
       {children}
     </motion.div>
