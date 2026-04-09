@@ -23,20 +23,16 @@ export const DURATION_ENTER = 500
 
 export function TransitionProvider({ children }: { children: React.ReactNode }) {
   const [direction, setDirection] = useState(1)
-  const [isExiting, setIsExiting] = useState(false)
   const router = useRouter()
   const isFirstLoad = useRef(true)
+  const isExiting = false
 
   function navigate(href: string, currentPath: string) {
     isFirstLoad.current = false
     const order = navLinks.map(l => l.href)
     const dir = order.indexOf(href) > order.indexOf(currentPath) ? 1 : -1
     setDirection(dir)
-    setIsExiting(true)
-    setTimeout(() => {
-      setIsExiting(false)
-      router.push(href)
-    }, isExiting ? DURATION_EXIT : DURATION_ENTER)
+    router.push(href)
   }
 
   return (
