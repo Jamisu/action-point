@@ -4,7 +4,7 @@
       "date": "I-V.2025",
       "company": "Numerous Contractors",
       "role": "Front-End Engineer, AI developer",
-      "description": "AI project for an artists UFO gallery. AI ROG + LLM for a Startup.",
+      "description": "AI project for an artists UFO art gallery. AI ROG + LLM for a Startup. Support in service debugging",
       "tags": ["JavaScript", "AI", "ROG", "Analysis"]
     },
     {
@@ -212,8 +212,9 @@
       "date": "2025",
       "image": "/images/0_ai.jpg",
       "shortDesc": "AI Exhibition installation",
-      "fullDesc": "AI Exhibition installation for UFO gallery in Krakow",
-      "stack": ["openAI API", "Vanilla JS", "CSS"]
+      "fullDesc": "An artinstallation held in UFO art gallery in Krakow, for Radim Koros PhD, powered by two different AI characters (openAI API) chatting with each other about art, using just one account. Savable chat history, modifiable personalities.",
+      "stack": ["openAI API", "Vanilla JS", "CSS"],
+      "url": "http://ufoart.gallery/"
     },
     {
       "title": "Developer References",
