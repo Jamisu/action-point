@@ -42,8 +42,7 @@ export default function ProjectModal({
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: `url(${project.image})`,
-                filter: 'brightness(0.65)',
+                backgroundImage: `url(${project.image})`
               }}
             />
           ) : (
