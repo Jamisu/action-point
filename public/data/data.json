@@ -1,8 +1,15 @@
 {
   "jobs": [
     {
+      "date": "I-V.2025",
+      "company": "Numerous Contractors",
+      "role": "Front-End Engineer, AI developer",
+      "description": "AI project for an artists UFO gallery. AI ROG + LLM for a Startup.",
+      "tags": ["JavaScript", "AI", "ROG", "Analysis"]
+    },
+    {
       "date": "XI.2022 — XII.2023",
-      "company": "Confidential · B2B Contract",
+      "company": "SoftBlue",
       "role": "Front-End Engineer",
       "description": "Developing Front-End microservices, refactoring code across multiple projects.",
       "tags": ["React", "TypeScript", "MaterialUI", "Docker"]
@@ -15,8 +22,8 @@
       "tags": ["React", "Google Ads"]
     },
     {
-      "date": "I.2020 — II.2021",
-      "company": "Confidential",
+      "date": "I.2020 — III.2021",
+      "company": "Ringier Axel Springer",
       "role": "Software Engineer",
       "description": "Development of Consent (RODO) panel in Preact.js and TypeScript. Maintenance of Python backend microservices. Continuous integration of middleware advertisement service in Vanilla JS.",
       "tags": ["Preact", "TypeScript", "Python", "CI/CD", "Vanilla JS"]
@@ -30,21 +37,21 @@
     },
     {
       "date": "IV.2016 — X.2018",
-      "company": "Confidential",
+      "company": "Dreamlab / Onet S.A",
       "role": "Developer",
       "description": "Video Player front-end, WebCKM Video CMS (React + Python), LivePanel live video service (Angular + Python). REST API development, VPAID JS interactive ad templates, HIVE data analysis, unit tests + CI.",
       "tags": ["React", "Angular", "Python", "REST", "VPAID", "HIVE"]
     },
     {
       "date": "I.2016 — IV.2016",
-      "company": "Confidential · Contract",
+      "company": "Dreamlab / Onet S.A · Contract",
       "role": "Senior Flash Developer",
       "description": "Integration of IMA SDK with company player. Refactoring and debugging the player. Integrating Flash layer with JavaScript. Attending Scrum meetings.",
       "tags": ["Flash", "ActionScript 3", "JavaScript", "Scrum"]
     },
     {
       "date": "VI.2014 — X.2015",
-      "company": "Confidential",
+      "company": "LogicIMS",
       "role": "Senior Flash Developer",
       "description": "Game deployment and testing on iPad, Android, and Web. Contributing bug fixes in root client SDK. Managing and taking part in everyday groomings.",
       "tags": ["Flash", "ActionScript 3", "Mobile"],
@@ -52,7 +59,7 @@
     },
     {
       "date": "III.2013 — IX.2013",
-      "company": "Confidential",
+      "company": "Buliba",
       "role": "Senior Flash Developer",
       "description": "Development of online pre-paid games. Creating video trailers for the games.",
       "tags": ["Flash", "ActionScript 3", "Video"],
@@ -60,7 +67,7 @@
     },
     {
       "date": "II.2012 — XI.2012",
-      "company": "Confidential",
+      "company": "TenSquareGames",
       "role": "TeamLeader · Senior Flash Developer",
       "description": "Social network games development. Managing company satellite office and projects.",
       "tags": ["Flash", "ActionScript 3", "Team Lead"],
@@ -68,7 +75,7 @@
     },
     {
       "date": "XI.2009 — XII.2011",
-      "company": "Confidential",
+      "company": "Eura7",
       "role": "Senior Flash Developer",
       "description": "Creation of 12 standing info-spot multimedia presentations for the History Museum of Kraków. Development of web pages, games and presentations.",
       "tags": ["Flash", "ActionScript 3", "Multimedia"],
@@ -76,7 +83,7 @@
     },
     {
       "date": "VIII.2008 — VI.2014",
-      "company": "Self Employed",
+      "company": "Chaotec",
       "role": "Freelance · Micro-company B2B",
       "description": "Managing own micro-company. Creating multimedia applications and developing web pages for various clients.",
       "tags": ["Flash", "ActionScript 3", "AmfPHP", "Web"],
@@ -84,7 +91,7 @@
     },
     {
       "date": "XII.2007 — V.2008",
-      "company": "Confidential",
+      "company": "MyNetwork",
       "role": "Multimedia Specialist",
       "description": "Creating multimedia presentations. Programming educational games.",
       "tags": ["Flash", "ActionScript 3", "Multimedia"],
@@ -144,7 +151,7 @@
       "legacy": true,
       "skills": [
         { "name": "Flash",           "type": "text" },
-        { "name": "Action\nScript",  "type": "text" },
+        { "name": "{AS3}",           "type": "text" },
         { "name": "AmfPHP",          "type": "text" },
         { "name": "Flare3D",         "type": "text" }
       ]
