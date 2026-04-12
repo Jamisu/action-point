@@ -155,37 +155,37 @@
     {
       "icon": "Mail",
       "label": "Email",
-      "value": "any@email.com",
-      "href": "mailto:any@email.com"
+      "value": "a.pocentek@gmail.com",
+      "href": "mailto:a.pocentek@gmail.com"
     },
     {
       "icon": "Phone",
       "label": "Phone",
-      "value": "+48 666 666 666",
-      "href": "tel:+48666666666"
+      "value": "+48 690 292 060",
+      "href": "tel:+48690292060"
     },
     {
       "icon": "Linkedin",
       "label": "LinkedIn",
-      "value": "linkedin.com/in/yourprofile",
-      "href": "https://linkedin.com/in/yourprofile"
+      "value": "linkedin.com",
+      "href": "https://www.linkedin.com/in/adam-pocentek-9725967b/"
     },
     {
       "icon": "Github",
       "label": "GitHub",
-      "value": "github.com/Jamisu",
+      "value": "github.com",
       "href": "https://github.com/Jamisu"
     },
     {
       "icon": "SiBehance",
       "label": "Behance",
-      "value": "behance.net/chaotec",
+      "value": "behance.net",
       "href": "https://www.behance.net/chaotec"
     },
     {
       "icon": "SiSoundcloud",
       "label": "SoundCloud",
-      "value": "soundcloud.com/chaotec",
+      "value": "soundcloud.com",
       "href": "https://soundcloud.com/chaotec"
     }
   ],
@@ -195,102 +195,68 @@
       "title": "Chaotec Portfolio",
       "date": "2022",
       "image": "/images/1_chaotec.jpg",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["React", "TypeScript", "MaterialUI", "Docker"],
+      "shortDesc": "Previous Portfolio from Scratch",
+      "fullDesc": "Previous portfolio made from scratch, no AI assistance. Animated icons through scss only. Two color modes",
+      "stack": ["React 17", "SCSS"],
       "url": "https://jamisu.github.io/my_portfolio/"
+    },
+    {
+      "title": "AI Exhibition installation",
+      "date": "2025",
+      "image": "/images/0_ai.jpg",
+      "shortDesc": "AI Exhibition installation",
+      "fullDesc": "AI Exhibition installation for UFO gallery in Krakow",
+      "stack": ["openAI API", "Vanilla JS", "CSS"]
     },
     {
       "title": "Developer References",
       "date": "2026",
       "image": "/images/2_ref.jpg",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["React", "Google Ads"]
+      "shortDesc": "From Zero to Hero. Dev Cheatsheets",
+      "fullDesc": "Developer cheatsheets. From Vanilla.js to Next.js. React, TypeScript, Tailwind, and more. Will become public soon :)",
+      "stack": ["AI", "AI management", "HTML", "Design", "Vercel"],
+      "url": "https://references-action-point.vercel.app/"
     },
     {
-      "title": "Project Title Three",
-      "date": "2024",
-      "image": "/images/AP_logo.png",
-      "shortDesc": "Short description.",
+      "title": "WebCKM",
+      "date": "2016-2018",
+      "image": "/images/3_webckm.jpg",
+      "shortDesc": "CMS for News Editors",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Preact", "TypeScript", "Python", "CI/CD", "Vanilla JS"],
-      "url": "https://example.com"
+      "stack": ["React 16", "Redux", "CI/CD", "S3 Cloud"]
     },
     {
-      "title": "Project Title Four",
-      "date": "2023",
-      "image": "/AP_logo.png",
+      "title": "Video Player",
+      "date": "2016-2018",
+      "image": "/images/4_video.jpg",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Java", "Python"]
+      "stack": ["Vanilla JS", "IMA SDK", "CI/CD", "PureMVC", "DASH", "Widevine", "HLS", "DRM"]
     },
     {
-      "title": "Project Title Five",
-      "date": "2022",
-      "image": "/AP_logo.png",
+      "title": "Rodo Panel",
+      "date": "2019/2020",
+      "image": "/images/4b_rodo.jpg",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["React", "Angular", "Python", "REST"],
-      "url": "https://example.com"
+      "stack": ["Preact", "SCSS", "CI/CD", "Python"]
     },
     {
-      "title": "Project Title Six",
-      "date": "2021",
-      "image": "/AP_logo.png",
+      "title": "History Museum Of Krakow",
+      "date": "2009/2010",
+      "image": "/images/5_mhk.jpg",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "JavaScript"]
+      "stack": ["Interactive Kiosks", "Flash", "ActionScript 3", "XML"]
     },
     {
-      "title": "Project Title Seven",
-      "date": "2020",
-      "image": "/AP_logo.png",
+      "title": "Flash Works",
+      "date": "2008-2015",
+      "image": "/images/6_flash.jpg",
       "shortDesc": "Short description.",
       "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "Mobile"],
-      "url": "https://example.com"
-    },
-    {
-      "title": "Project Title Eight",
-      "date": "2019",
-      "image": "/AP_logo.png",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "Video"]
-    },
-    {
-      "title": "Project Title Nine",
-      "date": "2018",
-      "image": "/AP_logo.png",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "Team Lead"]
-    },
-    {
-      "title": "Project Title Ten",
-      "date": "2017",
-      "image": "/AP_logo.png",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "Multimedia"]
-    },
-    {
-      "title": "Project Title Eleven",
-      "date": "2016",
-      "image": "/AP_logo.png",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "AmfPHP", "Web"],
-      "url": "https://example.com"
-    },
-    {
-      "title": "Project Title Twelve",
-      "date": "2015",
-      "image": "/AP_logo.png",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "Multimedia"]
+      "stack": ["Flash", "ActionScript 3", "Flare3D", "JavaScript"],
+      "url": "https://www.behance.net/chaotec"
     }
   ]
 }
