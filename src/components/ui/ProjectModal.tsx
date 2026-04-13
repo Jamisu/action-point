@@ -25,18 +25,17 @@ export default function ProjectModal({
 
   return (
     <div
-      className="fixed inset-0 z-[9998] flex items-center justify-center p-6"
-      style={{ backdropFilter: 'blur(4px)', backgroundColor: 'rgba(10,14,26,0.85)' }}
+      className="fixed inset-0 z-[9998] flex items-start justify-center p-6 overflow-y-auto"
+      style={{ backdropFilter: 'blur(4px)', backgroundColor: 'rgba(10,14,26,0.85)', paddingTop: 'max(5px, env(safe-area-inset-top))' }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-5xl rounded-2xl border-2 border-[#1f2d45] bg-[#0a0e1a] overflow-hidden"
+        className="relative w-full max-w-5xl rounded-2xl border-2 border-[#1f2d45] bg-[#0a0e1a] overflow-hidden my-auto"
         style={{
           animation: 'modalIn 0.3s ease both',
         }}
         onClick={e => e.stopPropagation()}
       >
-        
         <div className="relative w-full bg-[#0f1e35]" style={{ height: '480px' }}>
           {project.image ? (
             <div
@@ -48,11 +47,10 @@ export default function ProjectModal({
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-[#0f1e35] via-[#1a2d4a] to-[#0a0e1a]" />
           )}
-
           
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest px-3 py-1.5 border border-[#94a3b8]/40 text-[#94a3b8] rounded hover:border-[#94a3b8] hover:text-white transition-colors bg-[#0a0e1a]/70"
+            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest px-3 py-1.5 border border-[#fbbf24]/60 text-[#fbbf24] rounded hover:border-[#fbbf24] hover:text-white transition-colors bg-[#0a0e1a]/70"
           >
             ✕ Close
           </button>

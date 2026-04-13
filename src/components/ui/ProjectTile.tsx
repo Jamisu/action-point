@@ -72,7 +72,7 @@ export default function ProjectTile({ project, index, onClick }: {
         </p>
         <div className="flex flex-wrap gap-2 mt-1">
           {project.stack.map(tag => (
-            <span key={tag} className="font-mono text-xs uppercase tracking-widest px-2 py-0.5 rounded border border-[#1f2d45] text-[#64748b]">
+            <span key={tag} className="font-mono text-xs uppercase tracking-widest px-2 py-0.5 rounded border border-[#4f9cf9]/30 text-[#4f9cf9]">
               {tag}
             </span>
           ))}
