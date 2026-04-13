@@ -46,8 +46,8 @@ export default function ProjectTile({ project, index, onClick }: {
           style={{
             backgroundImage: `url(${project.image})`,
             transform: hovered ? 'scale(1.05)' : 'scale(1)',
-            transition: 'transform 0.4s ease',
-            filter: 'brightness(0.65)',
+            transition: 'transform 0.4s ease, filter 0.4s ease',
+            filter: hovered ? 'brightness(0.65)' : 'brightness(0.55) grayscale(1)'
           }}
         />
         <div className="absolute top-4 left-4">
