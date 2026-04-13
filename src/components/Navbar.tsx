@@ -104,7 +104,7 @@ export default function Navbar() {
                 ) : (
                   <button
                     onClick={() => { setIsOpen(false); handleNavClick(link.href) }}
-                    className="font-mono text-sm uppercase tracking-widest transition-colors hover:text-[#4f9cf9] text-[#64748b] bg-transparent border-none cursor-pointer"
+                    className="font-mono text-sm uppercase tracking-widest text-slate-400 drop-shadow-sm bg-transparent border-none cursor-pointer"
                   >
                     {link.label}
                   </button>
