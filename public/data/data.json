@@ -212,7 +212,7 @@
       "date": "2025",
       "image": "/images/0_ai.jpg",
       "shortDesc": "AI Exhibition installation",
-      "fullDesc": "An artinstallation held in UFO art gallery in Krakow, for Radim Koros PhD, powered by two different AI characters (openAI API) chatting with each other about art, using just one account. Savable chat history, modifiable personalities.",
+      "fullDesc": "An art installation held in UFO art gallery in Krakow, for Radim Koros PhD, powered by two different AI characters (openAI API) chatting with each other about art, using just one account. Savable chat history, modifiable personalities.",
       "stack": ["openAI API", "Vanilla JS", "CSS"],
       "url": "http://ufoart.gallery/"
     },
@@ -230,40 +230,40 @@
       "date": "2016-2018",
       "image": "/images/3_webckm.jpg",
       "shortDesc": "CMS for News Editors",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "fullDesc": "Extensive CMS for News Editors, with various content types, media management, and publishing workflows. Video upload by chunks to S3 Cloud",
       "stack": ["React 16", "Redux", "CI/CD", "S3 Cloud"]
     },
     {
       "title": "Video Player",
       "date": "2016-2018",
       "image": "/images/4_video.jpg",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "shortDesc": "Onet in-house video player",
+      "fullDesc": "Assumed sole responsibility for a legacy in-house video player and maintained it over several years; independently implemented an IMA SDK integration from scratch",
       "stack": ["Vanilla JS", "IMA SDK", "CI/CD", "PureMVC", "DASH", "Widevine", "HLS", "DRM"]
     },
     {
       "title": "Rodo Panel",
       "date": "2019/2020",
       "image": "/images/4b_rodo.jpg",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "shortDesc": "Preact RODO panel",
+      "fullDesc": "Developement of a GDPR consent management panel (TCF 2.0) for vendor selection and consent editing, deployed across multiple affiliated platforms, with ongoing adaptation to regulatory changes",
       "stack": ["Preact", "SCSS", "CI/CD", "Python"]
     },
     {
       "title": "History Museum Of Krakow",
       "date": "2009/2010",
       "image": "/images/5_mhk.jpg",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
+      "shortDesc": "Presentations for the Historical Museum of the City of Kraków",
+      "fullDesc": "Developed 20 interactive touchscreen kiosk presentations for the Historical Museum of the City of Kraków (Schindler's Factory), covering diverse historical topics with visuals tailored to individually themed exhibition rooms",
       "stack": ["Interactive Kiosks", "Flash", "ActionScript 3", "XML"]
     },
     {
       "title": "Flash Works",
       "date": "2008-2015",
       "image": "/images/6_flash.jpg",
-      "shortDesc": "Short description.",
-      "fullDesc": "Looong description. Looong description. Looong description. Looong description. Looong description. Looong description.",
-      "stack": ["Flash", "ActionScript 3", "Flare3D", "JavaScript"],
+      "shortDesc": "7 yers of Flash. A collection of my works stored on Behance",
+      "fullDesc": "7 years of Flash/ActionScript 3 development — a creative era spanning browser games, e-learning modules, kiosk presentations, a flipping book content system, and a real-time 3D terrain editor (Flare3D); archived works available on Behance",
+      "stack": ["Flash", "ActionScript 3", "FlashDevelop", "Flare3D", "Starling", "JavaScript"],
       "url": "https://www.behance.net/chaotec"
     }
   ]

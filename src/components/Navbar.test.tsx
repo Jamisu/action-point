@@ -66,7 +66,7 @@ describe('Navbar component', () => {
     const mockNavigate = jest.fn()
     jest.spyOn(require('@/contexts/TransitionContext'), 'useTransition')
       .mockReturnValue({ navigate: mockNavigate })
-
+    
     render(<Navbar />)
     const [desktopHome] = screen.getAllByRole('button', { name: /home/i })
     fireEvent.click(desktopHome)
