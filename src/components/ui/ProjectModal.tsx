@@ -36,16 +36,15 @@ export default function ProjectModal({
         }}
         onClick={e => e.stopPropagation()}
       >
-        <div className="relative w-full bg-[#0f1e35]" style={{ height: '480px' }}>
+        <div className="relative w-full bg-[#0f1e35]">
           {project.image ? (
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${project.image})`
-              }}
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full block"
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0f1e35] via-[#1a2d4a] to-[#0a0e1a]" />
+            <div className="h-48 bg-gradient-to-br from-[#0f1e35] via-[#1a2d4a] to-[#0a0e1a]" />
           )}
           
           <button
