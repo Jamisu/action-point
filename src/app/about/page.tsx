@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const aboutText = "Front-end engineer, 13+ years. Flash to React to Next.js — I've survived every paradigm shift and came out sharper. I was reading about backpropagation and Turing at 16, long before AI became a LinkedIn keyword. I hold a Master's in Psychology — which means I actually understand the humans using what I build. I don't panic at legacy codebases; I bring a shovel and a flashlight. If you need someone who codes with precision, thinks in systems, and operates well beyond the ticket — we should talk."
+const aboutText = "Front-end engineer, 15+ years. Flash to React to Next.js — I've survived every paradigm shift and came out sharper. In recent year I worked independently on AI integration projects involving LLM APIs and model cost analysis. I hold a Master's in Psychology, which informs how I approach UX and team communication. I don't panic at legacy codebases; I bring a shovel and a flashlight. If you need someone who codes with precision, thinks in systems, and operates well beyond the ticket — we should talk."
 
 interface TypeWriterProps {
   text: string
