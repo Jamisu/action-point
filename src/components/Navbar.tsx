@@ -44,15 +44,15 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li
                 key={link.label}
-                ref={link.label === 'References' ? refTooltipRef : undefined}
+                ref={link.label === 'Code Refs' ? refTooltipRef : undefined}
                 onMouseEnter={() => {
-                  if (link.label === 'References' && refTooltipRef.current) {
+                  if (link.label === 'Code Refs' && refTooltipRef.current) {
                     show('Live CheatSheets', refTooltipRef.current.getBoundingClientRect(), { position: 'bottom' })
                   }
                 }}
                 onMouseLeave={hide}
               >
-                {link.label === 'References' ? (
+                {link.label === 'Code Refs' ? (
                   <a
                     href={link.href}
                     target="_blank"
@@ -91,7 +91,7 @@ export default function Navbar() {
           <ul className="flex flex-col px-6 pb-6 gap-4 border-t border-[#1f2d45]">
             {navLinks.map((link) => (
               <li key={link.label}>
-                {link.label === 'References' ? (
+                {link.label === 'Code Refs' ? (
                   <a
                     href={link.href}
                     target="_blank"

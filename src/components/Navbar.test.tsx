@@ -21,7 +21,7 @@ jest.mock('@/lib/navLinks', () => ({
     { label: 'Experience', href: '/experience' },
     { label: 'Projects',   href: '/projects' },
     { label: 'Contact',    href: '/contact' },
-    { label: 'References', href: 'https://references-action-point.vercel.app/' },
+    { label: 'Code Refs', href: 'https://references-action-point.vercel.app/' },
   ],
 }))
 
