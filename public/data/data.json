@@ -1,14 +1,14 @@
 {
   "jobs": [
     {
-      "date": "I.2024-V.2025",
+      "date": "I.2024 — Present",
       "company": "Numerous Contractors",
       "role": "Front-End Engineer, AI developer",
       "description": "AI project for an artists UFO art gallery. AI RAG + LLM for a Startup. Support in service debugging",
       "tags": ["JavaScript", "TypeScript", "Python", "AI", "ROG", "Analysis"]
     },
     {
-      "date": "XI.2022 — XII.2023",
+      "date": "XI.2022 — III.2023",
       "company": "SoftBlue",
       "role": "Front-End Engineer",
       "description": "Developing Front-End microservices, refactoring code across multiple projects.",
@@ -175,7 +175,7 @@
       "icon": "Linkedin",
       "label": "LinkedIn",
       "value": "linkedin.com",
-      "href": "https://www.linkedin.com/in/adam-pocentek-9725967b/"
+      "href": "https://www.linkedin.com/in/action-point/"
     },
     {
       "icon": "Github",
