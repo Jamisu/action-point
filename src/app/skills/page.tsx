@@ -90,7 +90,7 @@ export default function SkillsPage() {
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
           <div className="flex flex-col gap-4">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">Skills</p>
-            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">What I Work With</h2>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold var(--c-heading)">What I Work With</h2>
             <div className="w-16 h-0.5 bg-[var(--c-yellow)] opacity-50" />
           </div>
 

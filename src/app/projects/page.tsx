@@ -21,7 +21,7 @@ export default function ProjectsPage() {
 
           <div className="flex flex-col gap-4">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">Projects</p>
-            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">What I've Built</h2>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold var(--c-heading)">What I've Built</h2>
             <div className="w-16 h-0.5 opacity-50" />
           </div>
           

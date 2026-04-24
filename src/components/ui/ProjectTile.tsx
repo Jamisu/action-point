@@ -66,7 +66,7 @@ export default function ProjectTile({ project, index, onClick }: {
       </div>
 
       <div className="p-5 pl-8 flex flex-col gap-3">
-        <h3 className="font-sans text-lg font-bold text-white leading-tight">{project.title}</h3>
+        <h3 className="font-sans text-lg font-bold var(--c-heading) leading-tight">{project.title}</h3>
         <p className="font-mono text-sm text-[var(--c-muted)] leading-relaxed border-l-2 border-[var(--c-blue)]/30 pl-3">
           {project.shortDesc}
         </p>

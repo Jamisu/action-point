@@ -65,7 +65,7 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
         <div className="max-w-4xl mx-auto w-full flex flex-col gap-8">
           <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">About Me</p>
 
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Who I Am</h2>
+          <h2 className="font-sans text-4xl md:text-5xl font-bold var(--c-heading)">Who I Am</h2>
 
           <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
 

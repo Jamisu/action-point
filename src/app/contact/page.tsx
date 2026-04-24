@@ -84,7 +84,7 @@ function AnimatedCard({
       )}
       <div className="flex flex-col min-w-0">
         <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-muted2)] mb-0.5">{label}</span>
-        <span className="font-mono text-sm text-[var(--c-text)] truncate group-hover:text-white transition-colors duration-300">
+        <span className="font-mono text-sm text-[var(--c-text)] truncate group-hover:var(--c-heading) transition-colors duration-300">
           {value}
         </span>
       </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
           <div className="flex flex-col gap-4">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">Contact</p>
-            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Get In Touch</h2>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold var(--c-heading)">Get In Touch</h2>
             <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
           </div>
 

@@ -49,7 +49,7 @@ export default function ProjectModal({
           
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest px-3 py-1.5 border border-[var(--c-yellow)]/60 text-[var(--c-yellow)] rounded hover:border-[var(--c-yellow)] hover:text-white transition-colors bg-[var(--c-bg)]/70"
+            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest px-3 py-1.5 border border-[var(--c-yellow)]/60 text-[var(--c-yellow)] rounded hover:border-[var(--c-yellow)] hover:var(--c-heading) transition-colors bg-[var(--c-bg)]/70"
           >
             ✕ Close
           </button>
@@ -80,7 +80,7 @@ export default function ProjectModal({
         </div>
 
         <div className="p-6 pl-10 flex flex-col gap-4">
-          <h2 className="font-sans text-2xl font-bold text-white">
+          <h2 className="font-sans text-2xl font-bold var(--c-heading)">
             {project.title}
           </h2>
 

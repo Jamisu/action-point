@@ -63,7 +63,7 @@ function JobEntry({
           {job.date}
         </p>
 
-        <p className="font-sans text-2xl font-bold text-white mb-1">{job.company}</p>
+        <p className="font-sans text-2xl font-bold var(--c-heading) mb-1">{job.company}</p>
 
         <p
           className={`font-mono text-sm uppercase tracking-widest mb-5 ${
@@ -115,7 +115,7 @@ export default function ExperiencePage() {
         <div className="max-w-4xl mx-auto w-full">
           <div className="flex flex-col gap-4 mb-20">
             <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">Experience</p>
-            <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Where I've Been</h2>
+            <h2 className="font-sans text-4xl md:text-5xl font-bold var(--c-heading)">Where I've Been</h2>
             <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
           </div>
 

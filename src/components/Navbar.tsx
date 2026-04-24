@@ -10,6 +10,7 @@ import { navLinks } from '@/lib/navLinks'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [theme, setTheme] = useState<'day' | 'night'>('night')
   const menuRef = useRef<HTMLDivElement>(null)
   const { show, hide } = useTooltip()
   const { navigate } = useTransition()
@@ -29,6 +30,12 @@ export default function Navbar() {
   function handleNavClick(href: string) {
     if (href === pathname) return
     navigate(href, pathname)
+  }
+
+  function changeTheme() {
+    const newTheme = theme === 'night' ? 'day' : 'night'
+    document.documentElement.setAttribute('data-theme', newTheme)
+    setTheme(newTheme)
   }
 
   return (
@@ -74,6 +81,20 @@ export default function Navbar() {
                 )}
               </li>
             ))}
+            <li>
+              <button
+                onClick={changeTheme}
+                className="relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-surf)] bg-[var(--c-bg2)]"
+                aria-label="Toggle theme"
+              >
+                <span className={`absolute left-1 w-4 h-4 rounded-full transition-all duration-300 
+                  ${theme === 'day' 
+                    ? 'translate-x-6 bg-[var(--c-yellow)]' 
+                    : 'translate-x-0 bg-[var(--c-blue)]'
+                  }`} 
+                />
+              </button>
+            </li>
           </ul>
 
           <button
@@ -111,6 +132,21 @@ export default function Navbar() {
                 )}
               </li>
             ))}
+
+            <li>
+              <button
+                onClick={changeTheme}
+                className="relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-surf)] bg-[var(--c-bg2)]"
+                aria-label="Toggle theme"
+              >
+                <span className={`absolute left-1 w-4 h-4 rounded-full transition-all duration-300 
+                  ${theme === 'day' 
+                    ? 'translate-x-6 bg-[var(--c-yellow)]' 
+                    : 'translate-x-0 bg-[var(--c-blue)]'
+                  }`} 
+                />
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
