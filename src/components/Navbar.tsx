@@ -18,6 +18,14 @@ export default function Navbar() {
   const pathname = usePathname()
 
   useEffect(() => {
+    const saved = localStorage.getItem('theme') as 'day' | 'night' | null
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved)
+      setTheme(saved)
+    }
+  }, [])
+  
+  useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setIsOpen(false)
@@ -35,6 +43,7 @@ export default function Navbar() {
   function changeTheme() {
     const newTheme = theme === 'night' ? 'day' : 'night'
     document.documentElement.setAttribute('data-theme', newTheme)
+    localStorage.setItem('theme', newTheme)
     setTheme(newTheme)
   }
 
