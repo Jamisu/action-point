@@ -24,7 +24,7 @@ export default function Navbar() {
       setTheme(saved)
     }
   }, [])
-  
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -93,7 +93,7 @@ export default function Navbar() {
             <li>
               <button
                 onClick={changeTheme}
-                className="relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-surf)] bg-[var(--c-bg2)]"
+                className="mt-1.5 relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-muted2)] bg-[var(--c-bg2)]"
                 aria-label="Toggle theme"
               >
                 <span className={`absolute left-1 w-4 h-4 rounded-full transition-all duration-300 
@@ -117,6 +117,7 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
           <ul className="flex flex-col px-6 pb-6 gap-4 border-t border-[var(--c-surf)]">
             {navLinks.map((link) => (
@@ -145,14 +146,14 @@ export default function Navbar() {
             <li>
               <button
                 onClick={changeTheme}
-                className="relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-surf)] bg-[var(--c-bg2)]"
+                className="mt-1 relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-muted2)] bg-[var(--c-bg2)]"
                 aria-label="Toggle theme"
               >
                 <span className={`absolute left-1 w-4 h-4 rounded-full transition-all duration-300 
                   ${theme === 'day' 
-                    ? 'translate-x-6 bg-[var(--c-yellow)]' 
+                    ? 'translate-x-6 bg-[var(--c-yellow)]'
                     : 'translate-x-0 bg-[var(--c-blue)]'
-                  }`} 
+                  }`}
                 />
               </button>
             </li>
