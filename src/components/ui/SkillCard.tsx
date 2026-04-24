@@ -49,7 +49,7 @@ export default function SkillCard({
   const { show, hide } = useTooltip()
   const ref = useRef<HTMLDivElement>(null)
   const label = skill.tooltip ?? skill.name
-  const iconColor = legacy ? '#94a3b8' : '#fbbf24'
+  const iconColor = legacy ? 'var(--c-muted)' : 'var(--c-yellow)'
   const ResolvedIcon = skill.simpleIcon 
     ? iconMap[skill.simpleIcon as IconKey] 
     : null
@@ -69,10 +69,10 @@ export default function SkillCard({
         w-24 h-24 rounded-xl border-2 transition-all duration-300 cursor-default
         hover:scale-105
         ${legacy
-          ? 'border-[#94a3b8]/40 bg-[#0a0e1a]/60 hover:border-[#94a3b8]/70 hover:shadow-lg hover:shadow-[#94a3b8]/10'
+          ? 'border-[var(--c-muted)]/40 bg-[var(--c-bg)]/60 hover:border-[var(--c-muted)]/70 hover:shadow-lg hover:shadow-[var(--c-muted)]/10'
           : emerging
-          ? 'border-[#fbbf24]/50 bg-[#0f1e35]/60 hover:border-[#fbbf24]/80 hover:bg-[#0f1e35] hover:shadow-lg hover:shadow-[#fbbf24]/10'
-          : 'border-[#1f2d45] bg-[#0a0e1a]/80 hover:border-[#fbbf24]/60 hover:bg-[#0f1e35]/80 hover:shadow-lg hover:shadow-[#fbbf24]/10'
+          ? 'border-[var(--c-yellow)]/50 bg-[var(--c-bg2)]/60 hover:border-[var(--c-yellow)]/80 hover:bg-[var(--c-bg2)] hover:shadow-lg hover:shadow-[var(--c-yellow)]/10'
+          : 'border-[var(--c-surf)] bg-[var(--c-bg)]/80 hover:border-[var(--c-yellow)]/60 hover:bg-[var(--c-bg2)]/80 hover:shadow-lg hover:shadow-[var(--c-yellow)]/10'
         }
       `}
     >
@@ -89,7 +89,7 @@ export default function SkillCard({
 
       {skill.type === 'text' && (
         <span
-          className="font-mono text-center leading-tight px-1 py-1 rounded border border-[#fbbf24]/30 text-[#fbbf24]"
+          className="font-mono text-center leading-tight px-1 py-1 rounded border border-[var(--c-yellow)]/30 text-[var(--c-yellow)]"
           style={{ fontSize: '14px' }}
         >
           {skill.name}
@@ -98,7 +98,7 @@ export default function SkillCard({
 
       {legacy && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-full h-px bg-[#94a3b8]/15 rotate-12" />
+          <div className="w-full h-px bg-[var(--c-muted)]/15 rotate-12" />
         </div>
       )}
     </div>

@@ -27,7 +27,7 @@ export default function ProjectTile({ project, index, onClick }: {
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative rounded-xl border-2 border-[#1f2d45] bg-[#0a0e1a]/60 overflow-hidden cursor-pointer"
+      className="relative rounded-xl border-2 border-[var(--c-surf)] bg-[var(--c-bg)]/60 overflow-hidden cursor-pointer"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible
@@ -36,11 +36,11 @@ export default function ProjectTile({ project, index, onClick }: {
         transition: visible
           ? 'opacity 0.5s ease, transform 0.25s ease, border-color 0.25s ease'
           : `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s`,
-        borderColor: hovered ? '#4f9cf9' : undefined,
+        borderColor: hovered ? 'var(--c-blue)' : undefined,
         boxShadow: hovered ? '0 8px 32px rgba(79,156,249,0.15)' : undefined,
       }}
     >
-      <div className="relative w-full bg-[#0f1e35] overflow-hidden" style={{ height: '200px' }}>
+      <div className="relative w-full bg-[var(--c-bg2)] overflow-hidden" style={{ height: '200px' }}>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -51,7 +51,7 @@ export default function ProjectTile({ project, index, onClick }: {
           }}
         />
         <div className="absolute top-4 left-4">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9] bg-[#0a0e1a]/70 px-2 py-1 rounded">
+          <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)] bg-[var(--c-bg)]/70 px-2 py-1 rounded">
             {project.date}
           </span>
         </div>
@@ -59,7 +59,7 @@ export default function ProjectTile({ project, index, onClick }: {
           className="absolute inset-0 flex items-center justify-center"
           style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.2s ease' }}
         >
-          <span className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[#4f9cf9] text-[#4f9cf9] rounded bg-[#0a0e1a]/80">
+          <span className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[var(--c-blue)] text-[var(--c-blue)] rounded bg-[var(--c-bg)]/80">
             Details
           </span>
         </div>
@@ -67,12 +67,12 @@ export default function ProjectTile({ project, index, onClick }: {
 
       <div className="p-5 pl-8 flex flex-col gap-3">
         <h3 className="font-sans text-lg font-bold text-white leading-tight">{project.title}</h3>
-        <p className="font-mono text-sm text-[#94a3b8] leading-relaxed border-l-2 border-[#4f9cf9]/30 pl-3">
+        <p className="font-mono text-sm text-[var(--c-muted)] leading-relaxed border-l-2 border-[var(--c-blue)]/30 pl-3">
           {project.shortDesc}
         </p>
         <div className="flex flex-wrap gap-2 mt-1">
           {project.stack.map(tag => (
-            <span key={tag} className="font-mono text-xs uppercase tracking-widest px-2 py-0.5 rounded border border-[#4f9cf9]/30 text-[#4f9cf9]">
+            <span key={tag} className="font-mono text-xs uppercase tracking-widest px-2 py-0.5 rounded border border-[var(--c-blue)]/30 text-[var(--c-blue)]">
               {tag}
             </span>
           ))}

@@ -10,7 +10,7 @@ function GroupBlock({ group }: { group: SkillGroup }) {
     <div className="flex flex-col gap-4 flex-1">
       <p
         className={`font-mono text-sm uppercase tracking-widest font-bold ${
-          group.legacy ? 'text-[#94a3b8]' : 'text-[#fbbf24]'
+          group.legacy ? 'text-[var(--c-muted)]' : 'text-[var(--c-yellow)]'
         }`}
       >
         {group.legacy ? `🕯️${group.label}` : group.label}
@@ -89,9 +89,9 @@ export default function SkillsPage() {
       >
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
           <div className="flex flex-col gap-4">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Skills</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">Skills</p>
             <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">What I Work With</h2>
-            <div className="w-16 h-0.5 bg-[#fbbf24] opacity-50" />
+            <div className="w-16 h-0.5 bg-[var(--c-yellow)] opacity-50" />
           </div>
 
           <div className="flex flex-col gap-16">

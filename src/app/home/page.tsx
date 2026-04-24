@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 const lines = [
   { text: 'Action Point', delay: 0, className: 'text-5xl md:text-7xl font-bold font-sans text-white tracking-tight' },
-  { text: 'Front-End Engineer', delay: 150, className: 'text-xl md:text-2xl font-mono text-[#4f9cf9] tracking-widest uppercase' },
-  { text: '15 years. Flash to Next.js.', delay: 300, className: 'text-base md:text-lg text-[#64748b] font-mono' },
-  { text: 'I build things that work, look right,\nand make sense to humans.', delay: 450, className: 'text-base md:text-lg text-[#94a3b8]' },
+  { text: 'Front-End Engineer', delay: 150, className: 'text-xl md:text-2xl font-mono text-[var(--c-blue)] tracking-widest uppercase' },
+  { text: '15 years. Flash to Next.js.', delay: 300, className: 'text-base md:text-lg text-[var(--c-muted2)] font-mono' },
+  { text: 'I build things that work, look right,\nand make sense to humans.', delay: 450, className: 'text-base md:text-lg text-[var(--c-muted)]' },
 ]
 
 interface HomeLine {
@@ -56,7 +56,7 @@ export default function HomePage() {
             <AnimatedLine key={line.text} {...line} />
           ))}
 
-          <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50 mx-auto" />
+          <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50 mx-auto" />
 
           <div
             className="flex gap-4 flex-wrap justify-center opacity-0"
@@ -64,13 +64,13 @@ export default function HomePage() {
           >
             <Link
               href="/projects"
-              className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[#4f9cf9] text-[#0a0e1a] font-bold rounded hover:bg-white transition-colors focus:outline-none"
+              className="font-mono text-sm uppercase tracking-widest px-6 py-3 bg-[var(--c-blue)] text-[var(--c-bg)] font-bold rounded hover:bg-white transition-colors focus:outline-none"
             >
               View Projects
             </Link>
             <Link
               href="/contact"
-              className="font-mono text-sm uppercase tracking-widest px-6 py-3 border border-[#4f9cf9] text-[#4f9cf9] rounded hover:bg-[#4f9cf9] hover:text-[#0a0e1a] transition-colors"
+              className="font-mono text-sm uppercase tracking-widest px-6 py-3 border border-[var(--c-blue)] text-[var(--c-blue)] rounded hover:bg-[var(--c-blue)] hover:text-[var(--c-bg)] transition-colors"
             >
               Contact Me
             </Link>

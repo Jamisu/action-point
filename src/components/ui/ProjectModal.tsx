@@ -30,13 +30,13 @@ export default function ProjectModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-5xl rounded-2xl border-2 border-[#1f2d45] bg-[#0a0e1a] overflow-hidden my-auto"
+        className="relative w-full max-w-5xl rounded-2xl border-2 border-[var(--c-surf)] bg-[var(--c-bg)] overflow-hidden my-auto"
         style={{
           animation: 'modalIn 0.3s ease both',
         }}
         onClick={e => e.stopPropagation()}
       >
-        <div className="relative w-full bg-[#0f1e35]">
+        <div className="relative w-full bg-[var(--c-bg2)]">
           {project.image ? (
             <img
               src={project.image}
@@ -44,18 +44,18 @@ export default function ProjectModal({
               className="w-full block"
             />
           ) : (
-            <div className="h-48 bg-gradient-to-br from-[#0f1e35] via-[#1a2d4a] to-[#0a0e1a]" />
+            <div className="h-48 bg-gradient-to-br from-[var(--c-bg2)] via-[#1a2d4a] to-[var(--c-bg)]" />
           )}
           
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest px-3 py-1.5 border border-[#fbbf24]/60 text-[#fbbf24] rounded hover:border-[#fbbf24] hover:text-white transition-colors bg-[#0a0e1a]/70"
+            className="absolute top-4 right-4 font-mono text-xs uppercase tracking-widest px-3 py-1.5 border border-[var(--c-yellow)]/60 text-[var(--c-yellow)] rounded hover:border-[var(--c-yellow)] hover:text-white transition-colors bg-[var(--c-bg)]/70"
           >
             ✕ Close
           </button>
 
           <div className="absolute top-4 left-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9] bg-[#0a0e1a]/70 px-2 py-1 rounded">
+            <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)] bg-[var(--c-bg)]/70 px-2 py-1 rounded">
               {project.date}
             </span>
           </div>
@@ -67,12 +67,12 @@ export default function ProjectModal({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={e => e.stopPropagation()}
-                className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[#4f9cf9] text-[#4f9cf9] rounded bg-[#0a0e1a]/80 hover:bg-[#4f9cf9] hover:text-[#0a0e1a] transition-colors duration-200"
+                className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[var(--c-blue)] text-[var(--c-blue)] rounded bg-[var(--c-bg)]/80 hover:bg-[var(--c-blue)] hover:text-[var(--c-bg)] transition-colors duration-200"
               >
                 Preview
               </a>
             ) : (
-              <span className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[#1f2d45] text-[#64748b] rounded bg-[#0a0e1a]/80 cursor-not-allowed">
+              <span className="font-mono text-xs uppercase tracking-widest px-4 py-2 border border-[var(--c-surf)] text-[var(--c-muted2)] rounded bg-[var(--c-bg)]/80 cursor-not-allowed">
                 Preview not available
               </span>
             )}
@@ -84,7 +84,7 @@ export default function ProjectModal({
             {project.title}
           </h2>
 
-          <p className="font-mono text-sm text-[#94a3b8] leading-relaxed border-l-2 border-[#4f9cf9]/30 pl-4">
+          <p className="font-mono text-sm text-[var(--c-muted)] leading-relaxed border-l-2 border-[var(--c-blue)]/30 pl-4">
             {project.fullDesc}
           </p>
 
@@ -92,7 +92,7 @@ export default function ProjectModal({
             {project.stack.map(tag => (
               <span
                 key={tag}
-                className="font-mono text-xs uppercase tracking-widest px-3 py-1 rounded border border-[#4f9cf9]/30 text-[#4f9cf9] hover:border-[#4f9cf9] transition-colors"
+                className="font-mono text-xs uppercase tracking-widest px-3 py-1 rounded border border-[var(--c-blue)]/30 text-[var(--c-blue)] hover:border-[var(--c-blue)] transition-colors"
               >
                 {tag}
               </span>

@@ -23,7 +23,7 @@ const TooltipContext = createContext<TooltipContextValue | null>(null)
 // ─── PROVIDER ────────────────────────────────────────────────────────────────
 
 const GAP = 8
-const DEFAULT_COLOR = '#94a3b8'
+const DEFAULT_COLOR = 'var(--c-muted)'
 
 export function TooltipProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<TooltipState>({
@@ -97,7 +97,7 @@ export function TooltipProvider({ children }: { children: React.ReactNode }) {
           zIndex: 9999,
           transition: 'opacity 0.15s ease',
         }}
-        className="px-2 py-1 rounded bg-[#0f1e35] border border-[#1f2d45] shadow-lg font-mono text-[10px] uppercase tracking-widest whitespace-nowrap"
+        className="px-2 py-1 rounded bg-[var(--c-bg2)] border border-[var(--c-surf)] shadow-lg font-mono text-[10px] uppercase tracking-widest whitespace-nowrap"
       >
         {state.text}
       </div>

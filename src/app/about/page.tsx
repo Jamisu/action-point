@@ -33,7 +33,7 @@ function TypeWriter({ text, speed = 20, className }: TypeWriterProps) {
   return (
     <p className={className}>
       {displayed}
-      {index < text.length && <span className="animate-pulse text-[#4f9cf9]">|</span>}
+      {index < text.length && <span className="animate-pulse text-[var(--c-blue)]">|</span>}
     </p>
   )
 }
@@ -63,18 +63,18 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
         style={{ paddingTop: 'clamp(120px, 15vw, 220px)' }}
       >
         <div className="max-w-4xl mx-auto w-full flex flex-col gap-8">
-          <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">About Me</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">About Me</p>
 
           <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Who I Am</h2>
 
-          <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
+          <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
 
           <div className="min-h-[320px] md:min-h-[240px]">
             {isVisible && (
               <TypeWriter
                 text={aboutText}
                 speed={speed}
-                className="font-mono text-base md:text-lg text-[#94a3b8] leading-relaxed max-w-2xl"
+                className="font-mono text-base md:text-lg text-[var(--c-muted)] leading-relaxed max-w-2xl"
               />
             )}
           </div>

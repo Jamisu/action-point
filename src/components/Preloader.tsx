@@ -19,7 +19,7 @@ export default function Preloader() {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0a0e1a]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--c-bg)]"
       style={{
         opacity: isLoading ? 1 : 0,
         transform: isLoading ? 'scale(1)' : 'scale(0.95)',
@@ -27,7 +27,7 @@ export default function Preloader() {
       }}
     >
 
-      <div className="absolute w-40 h-40 rounded-full bg-[#4f9cf9]/10 blur-2xl" />
+      <div className="absolute w-40 h-40 rounded-full bg-[var(--c-blue)]/10 blur-2xl" />
       
       <div style={{ animation: isLoading ? 'flip 1.4s ease-in-out infinite' : undefined }}>
         <Image

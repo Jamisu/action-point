@@ -35,7 +35,7 @@ function AnimatedMap() {
   return (
     <div
       ref={ref}
-      className="flex-1 self-stretch rounded-2xl overflow-hidden border border-[#1f2d45] opacity-90"
+      className="flex-1 self-stretch rounded-2xl overflow-hidden border border-[var(--c-surf)] opacity-90"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateX(0)' : 'translateX(-24px)',
@@ -69,7 +69,7 @@ function AnimatedCard({
       href={href}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className="group flex items-center gap-4 p-4 rounded-xl border border-[#1f2d45] bg-[#0a0e1a]/60 hover:border-[#4f9cf9]/40 hover:bg-[#0f1e35] transition-all duration-300"
+      className="group flex items-center gap-4 p-4 rounded-xl border border-[var(--c-surf)] bg-[var(--c-bg)]/60 hover:border-[var(--c-blue)]/40 hover:bg-[var(--c-bg2)] transition-all duration-300"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateX(0)' : 'translateX(32px)',
@@ -79,12 +79,12 @@ function AnimatedCard({
       {Icon && (
         <Icon
           size={20}
-          className="text-[#4f9cf9] shrink-0 group-hover:scale-110 transition-transform duration-300"
+          className="text-[var(--c-blue)] shrink-0 group-hover:scale-110 transition-transform duration-300"
         />
       )}
       <div className="flex flex-col min-w-0">
-        <span className="font-mono text-xs uppercase tracking-widest text-[#64748b] mb-0.5">{label}</span>
-        <span className="font-mono text-sm text-[#cbd5e1] truncate group-hover:text-white transition-colors duration-300">
+        <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-muted2)] mb-0.5">{label}</span>
+        <span className="font-mono text-sm text-[var(--c-text)] truncate group-hover:text-white transition-colors duration-300">
           {value}
         </span>
       </div>
@@ -118,12 +118,12 @@ function AnimatedInfo() {
           transition: 'opacity 0.5s ease 0s, transform 0.5s ease 0s',
         }}
       >
-        <MapPin size={16} className="text-[#4f9cf9] shrink-0" />
-        <span className="font-mono text-sm text-[#94a3b8] uppercase tracking-widest">Kraków, Poland</span>
+        <MapPin size={16} className="text-[var(--c-blue)] shrink-0" />
+        <span className="font-mono text-sm text-[var(--c-muted)] uppercase tracking-widest">Kraków, Poland</span>
       </div>
 
       <div
-        className="w-full h-px bg-[#1f2d45]"
+        className="w-full h-px bg-[var(--c-surf)]"
         style={{
           opacity: visible ? 1 : 0,
           transition: 'opacity 0.5s ease 0.05s',
@@ -146,9 +146,9 @@ export default function ContactPage() {
       >
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-16">
           <div className="flex flex-col gap-4">
-            <p className="font-mono text-xs uppercase tracking-widest text-[#4f9cf9]">Contact</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)]">Contact</p>
             <h2 className="font-sans text-4xl md:text-5xl font-bold text-white">Get In Touch</h2>
-            <div className="w-16 h-0.5 bg-[#4f9cf9] opacity-50" />
+            <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
