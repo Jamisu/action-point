@@ -6,16 +6,16 @@
 }
 
 :root[data-theme="day"] {
-  --c-bg:      #f0f4ff;
-  --c-bg2:     #CDDCF3;
-  --c-surf:    #fbbf24;
-  --c-blue:    #2b7de9;
-  --c-yellow:  #d4920a;
-  --c-purple:  #7c5ccc;
-  --c-heading: #000000;
-  --c-text:    #333333;
-  --c-muted:   #4a5568;
-  --c-muted2:  #718096;
+  --c-bg:      #f0f4ff; /*BG top gradient*/
+  --c-bg2:     #C8E0FF; /*BG bottom gradient*/
+  --c-surf:    #fbbf24; /*Box borders, menu cut line*/
+  --c-blue:    #2b7de9; /*H3, Main Button, STACK*/
+  --c-yellow:  #d4920a; /*Icons, Selected Buttons, H3*/
+  --c-purple:  #7c5ccc; /*Code Refs*/
+  --c-heading: #000000; /*H2*/
+  --c-text:    #333333; /*H1*/
+  --c-muted:   #4a5568; /*Small text, labels*/
+  --c-muted2:  #718096; /*NavButtons off, ext-text (H2.5 :P)*/
 }
 
 :root[data-theme="night"] {
