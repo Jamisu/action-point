@@ -28,7 +28,7 @@ describe('Home section', () => {
   it('has correct section anchor', () => {
     const { container } = render(<Home />)
 
-    const homeAnchor = container.querySelector('/home')
+    const homeAnchor = container.querySelector('#home')
     expect(homeAnchor).toBeInTheDocument()
   })
 })
