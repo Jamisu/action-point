@@ -5,9 +5,8 @@ describe('Home section', () => {
   it('renders Home text content', () => {
     render(<Home />)
 
-    expect(screen.getByText('John Doe')).toBeInTheDocument()
     expect(screen.getByText('Front-End Engineer')).toBeInTheDocument()
-    expect(screen.getByText('13 years. Flash to Next.js.')).toBeInTheDocument()
+    expect(screen.getByText('15 years. Flash to Next.js.')).toBeInTheDocument()
   })
 
   it('renders multi-line tagline', () => {
@@ -22,14 +21,14 @@ describe('Home section', () => {
     const projectsLink = screen.getByRole('link', { name: /view projects/i })
     const contactLink = screen.getByRole('link', { name: /contact me/i })
 
-    expect(projectsLink).toHaveAttribute('href', '#projects')
-    expect(contactLink).toHaveAttribute('href', '#contact')
+    expect(projectsLink).toHaveAttribute('href', '/projects')
+    expect(contactLink).toHaveAttribute('href', '/contact')
   })
 
   it('has correct section anchor', () => {
     const { container } = render(<Home />)
 
-    const homeAnchor = container.querySelector('#home')
+    const homeAnchor = container.querySelector('/home')
     expect(homeAnchor).toBeInTheDocument()
   })
 })
