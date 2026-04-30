@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { MapPin, Mail, Phone, Linkedin, Github, LucideProps } from 'lucide-react'
 import { useData } from '@/contexts/DataContext'
 import { SiBehance, SiSoundcloud } from '@icons-pack/react-simple-icons'
+import { useIntersectionObserver } from '@/lib/useIntersectionObserver'
 
 const Map = dynamic(() => import('@/components/ui/ContactMap'), { ssr: false })
 
@@ -21,24 +22,25 @@ function AnimatedMap() {
   const [visible, setVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true)
-      },
-      { threshold: 0.1 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
+  const { ref: intersectionRef, isVisible } = useIntersectionObserver({ threshold: 0.1 })
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) setVisible(true)
+  //     },
+  //     { threshold: 0.1 }
+  //   )
+  //   if (ref.current) observer.observe(ref.current)
+  //   return () => observer.disconnect()
+  // }, [])
 
   return (
     <div
-      ref={ref}
+      ref={intersectionRef as React.RefObject<HTMLDivElement>}
       className="flex-1 self-stretch rounded-2xl overflow-hidden border border-[var(--c-surf)] opacity-90"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateX(0)' : 'translateX(-24px)',
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateX(0)' : 'translateX(-24px)',
         transition: 'opacity 0.6s ease, transform 0.6s ease',
       }}
     >
@@ -93,28 +95,16 @@ function AnimatedCard({
 }
 
 function AnimatedInfo() {
-  const [visible, setVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const { ref: intersectionRef, isVisible } = useIntersectionObserver({ threshold: 0.1 })
   const { contact } = useData()
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true)
-      },
-      { threshold: 0.1 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div ref={ref} className="flex flex-col justify-center gap-6 lg:w-80">
+    <div ref={intersectionRef as React.RefObject<HTMLDivElement>} className="flex flex-col justify-center gap-6 lg:w-80">
       <div
         className="flex items-center gap-3"
         style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? 'translateX(0)' : 'translateX(32px)',
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateX(0)' : 'translateX(32px)',
           transition: 'opacity 0.5s ease 0s, transform 0.5s ease 0s',
         }}
       >
@@ -125,13 +115,13 @@ function AnimatedInfo() {
       <div
         className="w-full h-px bg-[var(--c-surf)]"
         style={{
-          opacity: visible ? 1 : 0,
+          opacity: isVisible ? 1 : 0,
           transition: 'opacity 0.5s ease 0.05s',
         }}
       />
 
       {contact.map((link, i) => (
-        <AnimatedCard key={link.label} {...link} index={i + 1} visible={visible} />
+        <AnimatedCard key={link.label} {...link} index={i + 1} visible={isVisible} />
       ))}
     </div>
   )
@@ -157,6 +147,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
+      
   )
 }
