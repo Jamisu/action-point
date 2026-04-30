@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { Job } from '@/types/types'
+import { useIntersectionObserver } from '@/lib/useIntersectionObserver'
 
 function JobEntry({
   job,
@@ -13,19 +14,7 @@ function JobEntry({
   index: number
   isLegacyFirst?: boolean
 }) {
-  const [visible, setVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setTimeout(() => setVisible(true), index * 80)
-      },
-      { threshold: 0.1 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [index])
+  const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>({ delay: index * 80 })
 
   return (
     <>
@@ -37,10 +26,10 @@ function JobEntry({
       )}
 
       <div
-        ref={ref}
+        ref={ref as React.RefObject<HTMLDivElement>}
         style={{
-          opacity: visible ? (job.legacy ? 0.75 : 1) : 0,
-          transform: visible ? 'translateX(0)' : 'translateX(-16px)',
+          opacity: isVisible ? (job.legacy ? 0.75 : 1) : 0,
+          transform: isVisible ? 'translateX(0)' : 'translateX(-16px)',
           transition: `opacity 0.5s ease ${index * 0.06}s, transform 0.5s ease ${index * 0.06}s`,
         }}
         className="relative pl-10 pb-14 group"

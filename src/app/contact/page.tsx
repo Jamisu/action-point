@@ -95,11 +95,11 @@ function AnimatedCard({
 }
 
 function AnimatedInfo() {
-  const { ref: intersectionRef, isVisible } = useIntersectionObserver({ threshold: 0.1 })
+  const { ref: ref, isVisible } = useIntersectionObserver({ threshold: 0.1 })
   const { contact } = useData()
 
   return (
-    <div ref={intersectionRef as React.RefObject<HTMLDivElement>} className="flex flex-col justify-center gap-6 lg:w-80">
+    <div ref={ref as React.RefObject<HTMLDivElement>} className="flex flex-col justify-center gap-6 lg:w-80">
       <div
         className="flex items-center gap-3"
         style={{

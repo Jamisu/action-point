@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useIntersectionObserver } from '@/lib/useIntersectionObserver'
 
 const aboutText = "Front-end engineer, 15+ years. Flash to React to Next.js — I've survived every paradigm shift and came out sharper. In recent year I worked independently on AI integration projects involving LLM APIs and model cost analysis. I hold a Master's in Psychology, which informs how I approach UX and team communication. I don't panic at legacy codebases; I bring a shovel and a flashlight. If you need someone who codes with precision, thinks in systems, and operates well beyond the ticket — we should talk."
 
@@ -39,26 +40,12 @@ function TypeWriter({ text, speed = 20, className }: TypeWriterProps) {
 }
 
 export default function AboutPage({ speed = 20 }: { speed?: number }) {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting)
-      },
-      { threshold: 0.3 }
-    )
-
-    const section = document.getElementById('about')
-    if (section) observer.observe(section)
-
-    return () => observer.disconnect()
-  }, [])
+  const { ref, isVisible: isAboutVisible } = useIntersectionObserver()
 
   return (
     
       <div
-        id="about"
+        ref={ref as React.RefObject<HTMLDivElement>}
         className="min-h-screen flex flex-col justify-start px-6 pb-24"
         style={{ paddingTop: 'clamp(120px, 15vw, 220px)' }}
       >
@@ -70,7 +57,7 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
           <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
 
           <div className="min-h-[320px] md:min-h-[240px]">
-            {isVisible && (
+            {isAboutVisible && (
               <TypeWriter
                 text={aboutText}
                 speed={speed}
