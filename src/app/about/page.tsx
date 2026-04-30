@@ -40,7 +40,7 @@ function TypeWriter({ text, speed = 20, className }: TypeWriterProps) {
 }
 
 export default function AboutPage({ speed = 20 }: { speed?: number }) {
-  const { ref, isVisible: isAboutVisible } = useIntersectionObserver()
+  const { ref, isVisible } = useIntersectionObserver()
 
   return (
     
@@ -57,7 +57,7 @@ export default function AboutPage({ speed = 20 }: { speed?: number }) {
           <div className="w-16 h-0.5 bg-[var(--c-blue)] opacity-50" />
 
           <div className="min-h-[320px] md:min-h-[240px]">
-            {isAboutVisible && (
+            {isVisible && (
               <TypeWriter
                 text={aboutText}
                 speed={speed}

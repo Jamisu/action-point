@@ -95,7 +95,7 @@ function AnimatedCard({
 }
 
 function AnimatedInfo() {
-  const { ref: ref, isVisible } = useIntersectionObserver({ threshold: 0.1 })
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.1 })
   const { contact } = useData()
 
   return (
