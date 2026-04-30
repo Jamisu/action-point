@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useData } from '@/contexts/DataContext'
 import { SkillGroup } from '@/types/types'
 import SkillCard from '@/components/ui/SkillCard'
+import { useIntersectionObserver } from '@/lib/useIntersectionObserver'
 
 function GroupBlock({ group }: { group: SkillGroup }) {
   return (
@@ -42,27 +43,15 @@ function AnimatedRow({
   right: SkillGroup
   rowIndex: number
 }) {
-  const [visible, setVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setTimeout(() => setVisible(true), rowIndex * 200)
-      },
-      { threshold: 0.1 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [rowIndex])
+  const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>({ delay: rowIndex * 200 })
 
   return (
     <div
       ref={ref}
       className="flex flex-col md:flex-row gap-10 md:gap-16"
       style={{
-        opacity: visible ? rowOpacity[rowIndex] : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(20px)',
+        opacity: isVisible ? rowOpacity[rowIndex] : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
         transition: `opacity 0.5s ease ${rowIndex * 0.15}s, transform 0.5s ease ${rowIndex * 0.15}s`,
       }}
     >
