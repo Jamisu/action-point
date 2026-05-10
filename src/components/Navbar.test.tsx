@@ -22,7 +22,6 @@ jest.mock('@/lib/navLinks', () => ({
     { label: 'Experience', href: '/experience' },
     { label: 'Projects',   href: '/projects' },
     { label: 'Contact',    href: '/contact' },
-    { label: 'Code Refs', href: 'https://references-action-point.vercel.app/' },
   ],
 }))
 
@@ -34,7 +33,7 @@ describe('Navbar component', () => {
     expect(logo).toHaveAttribute('href', '/')
   })
 
-  it('renders all nav buttons (non-Code Refs links) as buttons', () => {
+  it('renders all nav buttons as buttons', () => {
     render(<Navbar />)
     const labels = ['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact']
     labels.forEach(label => {
@@ -42,20 +41,6 @@ describe('Navbar component', () => {
       const buttons = screen.getAllByRole('button', { name: new RegExp(label, 'i') })
       expect(buttons).toHaveLength(2)
     })
-  })
-
-  it('renders Code Refs as an anchor with correct href', () => {
-    render(<Navbar />)
-    const refs = screen.getAllByRole('link', { name: /code refs/i })
-    expect(refs).toHaveLength(2)
-    refs.forEach(link => expect(link).toHaveAttribute('href', 'https://references-action-point.vercel.app/'))
-  })
-
-  it('applies special styling to "desktop Code Refs link', () => {
-    render(<Navbar />)
-    const [desktopRef] = screen.getAllByRole('link', { name: /code refs/i })
-    // color test dropped - will externalise colors to theme
-    expect(desktopRef).toHaveClass('border')
   })
 
   it('renders hamburger button', () => {

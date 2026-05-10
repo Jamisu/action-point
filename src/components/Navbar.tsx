@@ -12,9 +12,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [theme, setTheme] = useState<'day' | 'night'>('night')
   const menuRef = useRef<HTMLDivElement>(null)
-  const { show, hide } = useTooltip()
+  const { hide } = useTooltip()
   const { navigate } = useTransition()
-  const refTooltipRef = useRef<HTMLLIElement>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -60,40 +59,24 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li
                 key={link.label}
-                ref={link.label === 'Code Refs' ? refTooltipRef : undefined}
-                onMouseEnter={() => {
-                  if (link.label === 'Code Refs' && refTooltipRef.current) {
-                    show('Live CheatSheets', refTooltipRef.current.getBoundingClientRect(), { position: 'bottom' })
-                  }
-                }}
                 onMouseLeave={hide}
               >
-                {link.label === 'Code Refs' ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-sm uppercase tracking-widest transition-colors text-[var(--c-purple)] hover:text-[var(--c-purple)] border border-[var(--c-purple)33] px-3 py-1 rounded hover:border-[var(--c-purple)]"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => handleNavClick(link.href)}
-                    className={`font-mono text-sm uppercase tracking-widest transition-colors bg-transparent border-none cursor-pointer
-                    ${pathname === link.href
-                      ? 'text-[var(--c-yellow)]'
-                      : 'text-[var(--c-muted2)] hover:text-[var(--c-blue)]'
-                    }`}>
-                    {link.label}
-                  </button>
-                )}
+                <button
+                  onClick={() => handleNavClick(link.href)}
+                  className={`font-mono text-sm uppercase tracking-widest transition-colors bg-transparent border-none cursor-pointer
+                  ${pathname === link.href
+                    ? 'text-[var(--c-yellow)]'
+                    : 'text-[var(--c-muted2)] hover:text-[var(--c-blue)]'
+                  }`}
+                >
+                  {link.label}
+                </button>
               </li>
             ))}
             <li>
               <button
                 onClick={changeTheme}
-                className="mt-1.5 relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-muted2)] bg-[var(--c-bg2)]"
+                className="mt-1.5 cursor-pointer relative inline-flex items-center w-12 h-6 rounded-full transition-colors duration-300 border border-[var(--c-muted2)] bg-[var(--c-bg2)]"
                 aria-label="Toggle theme"
               >
                 <span className={`absolute left-1 w-4 h-4 rounded-full transition-all duration-300 
@@ -106,6 +89,7 @@ export default function Navbar() {
             </li>
           </ul>
 
+          {/* Mobile Menu */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -117,29 +101,16 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
           <ul className="flex flex-col px-6 pb-6 gap-4 border-t border-[var(--c-surf)]">
             {navLinks.map((link) => (
               <li key={link.label}>
-                {link.label === 'Code Refs' ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
-                    className="font-mono text-sm uppercase tracking-widest transition-colors text-[var(--c-purple)] hover:text-[var(--c-purple)] border border-[var(--c-purple)33] px-3 py-1 rounded hover:border-[var(--c-purple)]"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => { setIsOpen(false); handleNavClick(link.href) }}
-                    className="font-mono text-sm uppercase tracking-widest text-slate-400 drop-shadow-sm bg-transparent border-none cursor-pointer"
-                  >
-                    {link.label}
-                  </button>
-                )}
+                <button
+                  onClick={() => { setIsOpen(false); handleNavClick(link.href) }}
+                  className="font-mono text-sm uppercase tracking-widest text-slate-400 drop-shadow-sm bg-transparent border-none cursor-pointer"
+                >
+                  {link.label}
+                </button>
               </li>
             ))}
 
