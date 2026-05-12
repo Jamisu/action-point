@@ -41,6 +41,7 @@ export interface ContactLink {
 export interface Project {
   title: string
   date: string
+  span: string
   image: string
   shortDesc: string
   fullDesc: string

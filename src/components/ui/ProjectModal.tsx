@@ -77,6 +77,11 @@ export default function ProjectModal({
               </span>
             )}
           </div>
+          <div className="absolute bottom-4 right-8">
+            <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)] bg-[var(--c-bg)]/70 px-2 py-1 rounded">
+              {project.span}
+            </span>
+          </div>
         </div>
 
         <div className="p-6 pl-10 flex flex-col gap-4">

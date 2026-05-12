@@ -201,6 +201,7 @@
     {
       "title": "WebCKM",
       "date": "2016-2018",
+      "span": "2.5 years",
       "image": "/images/3_webckm.jpg",
       "shortDesc": "CMS for News Editors",
       "fullDesc": "Extensive CMS for News Editors, with various content types, media management, and publishing workflows. Video upload by chunks to S3 Cloud",
@@ -209,6 +210,7 @@
     {
       "title": "Video Player",
       "date": "2016-2018",
+      "span": "2.5 years",
       "image": "/images/4_video.jpg",
       "shortDesc": "Onet in-house video player",
       "fullDesc": "Assumed sole responsibility for a legacy in-house video player and maintained it over several years; independently implemented an IMA SDK integration from scratch",
@@ -217,6 +219,7 @@
     {
       "title": "Rodo Panel",
       "date": "2019/2020",
+      "span": "1 year",
       "image": "/images/4b_rodo.jpg",
       "shortDesc": "Preact RODO panel",
       "fullDesc": "Developement of a GDPR consent management panel (TCF 2.0) for vendor selection and consent editing, deployed across multiple affiliated platforms, with ongoing adaptation to regulatory changes",
@@ -225,6 +228,7 @@
     {
       "title": "AI Exhibition installation",
       "date": "2025",
+      "span": "2 months",
       "image": "/images/0_ai.jpg",
       "shortDesc": "AI Exhibition installation",
       "fullDesc": "An art installation held in UFO art gallery in Krakow, for Radim Koros PhD, powered by two different AI characters (openAI API) chatting with each other about art, using just one account. Savable chat history, modifiable personalities.",
@@ -234,6 +238,7 @@
     {
       "title": "Chaotec Portfolio",
       "date": "2022",
+      "span": "3 months",
       "image": "/images/1_chaotec.jpg",
       "shortDesc": "Previous Portfolio from Scratch",
       "fullDesc": "Previous portfolio made from scratch, no AI assistance. Animated icons through scss only. Two color modes",
@@ -243,6 +248,7 @@
     {
       "title": "Developer References",
       "date": "2026",
+      "span": "2 weeks", 
       "image": "/images/2_ref.jpg",
       "shortDesc": "From Zero to Hero. Dev Cheatsheets",
       "fullDesc": "Developer cheatsheets. From Vanilla.js to Next.js. React, TypeScript, Tailwind, and more. Will become public soon :)",
@@ -252,6 +258,7 @@
     {
       "title": "History Museum Of Krakow",
       "date": "2009/2010",
+      "span": "2 years",
       "image": "/images/5_mhk.jpg",
       "shortDesc": "Presentations for the Historical Museum of the City of Kraków",
       "fullDesc": "Developed 20 interactive touchscreen kiosk presentations for the Historical Museum of the City of Kraków (Schindler's Factory), covering diverse historical topics with visuals tailored to individually themed exhibition rooms",
@@ -260,6 +267,7 @@
     {
       "title": "Flash Works",
       "date": "2008-2015",
+      "span": "7 years",
       "image": "/images/6_flash.jpg",
       "shortDesc": "7 yers of Flash. A collection of my works stored on Behance",
       "fullDesc": "7 years of Flash/ActionScript 3 development — a creative era spanning browser games, e-learning modules, kiosk presentations, a flipping book content system, and a real-time 3D terrain editor (Flare3D); archived works available on Behance",

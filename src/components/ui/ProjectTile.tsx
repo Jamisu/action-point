@@ -9,7 +9,7 @@ export default function ProjectTile({ project, index, onClick }: {
 }) {
   const [hovered, setHovered] = useState(false)
 
-  const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>( { delay: index * 80 } )
+  const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>({ delay: index * 80 })
 
   return (
     <div
@@ -40,11 +40,19 @@ export default function ProjectTile({ project, index, onClick }: {
             filter: hovered ? 'brightness(0.65)' : 'brightness(0.55) grayscale(1)'
           }}
         />
+
         <div className="absolute top-4 left-4">
           <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)] bg-[var(--c-bg)]/70 px-2 py-1 rounded">
             {project.date}
           </span>
         </div>
+
+        <div className="absolute top-4 right-4">
+          <span className="font-mono text-xs uppercase tracking-widest text-[var(--c-blue)] bg-[var(--c-bg)]/70 px-2 py-1 rounded">
+            {project.span}
+          </span>
+        </div>
+
         <div
           className="absolute inset-0 flex items-center justify-center"
           style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.2s ease' }}
