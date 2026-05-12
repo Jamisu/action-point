@@ -2,7 +2,7 @@
   "jobs": [
     {
       "date": "I.2024 — Present",
-      "company": "Numerous Contractors",
+      "company": "Independent Consultant / AI Research",
       "role": "Front-End Engineer, AI integration",
       "description": "Freelance work across front-end, AI integration (LLM/RAG), and Python — commercial projects including UFO Art Gallery Kraków and an AI startup, alongside Technical Consulting and Mentoring.",
       "tags": ["JavaScript", "TypeScript", "Python", "AI APIs", "ROG", "Analysis"]
@@ -143,7 +143,7 @@
         { "name": "OpenAI",   "type": "text" },
         { "name": "Pixi.js",  "type": "text" },
         { "name": "WebGL",    "type": "text" },
-        { "name": "Three.js", "type": "simple", "simpleIcon": "SiThreedotjs" }
+        { "name": "Three.js", "type": "text" }
       ]
     },
     {
@@ -151,7 +151,7 @@
       "legacy": true,
       "skills": [
         { "name": "Flash",           "type": "text" },
-        { "name": "{AS3}",           "type": "text" },
+        { "name": "{AS3}",           "tooltip": "ActionScript 3.0",  "type": "text" },
         { "name": "AmfPHP",          "type": "text" },
         { "name": "Flare3D",         "type": "text" }
       ]
