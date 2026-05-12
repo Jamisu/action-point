@@ -3,9 +3,9 @@
     {
       "date": "I.2024 — Present",
       "company": "Numerous Contractors",
-      "role": "Front-End Engineer, AI developer",
-      "description": "AI project for an artists UFO art gallery. AI RAG + LLM for a Startup. Support in service debugging",
-      "tags": ["JavaScript", "TypeScript", "Python", "AI", "ROG", "Analysis"]
+      "role": "Front-End Engineer, AI integration",
+      "description": "Freelance work across front-end, AI integration (LLM/RAG), and Python — commercial projects including UFO Art Gallery Kraków and an AI startup, alongside Technical Consulting and Mentoring.",
+      "tags": ["JavaScript", "TypeScript", "Python", "AI APIs", "ROG", "Analysis"]
     },
     {
       "date": "XI.2022 — III.2023",
@@ -199,33 +199,6 @@
 
   "projects": [
     {
-      "title": "Chaotec Portfolio",
-      "date": "2022",
-      "image": "/images/1_chaotec.jpg",
-      "shortDesc": "Previous Portfolio from Scratch",
-      "fullDesc": "Previous portfolio made from scratch, no AI assistance. Animated icons through scss only. Two color modes",
-      "stack": ["React 17", "SCSS"],
-      "url": "https://jamisu.github.io/my_portfolio/"
-    },
-    {
-      "title": "AI Exhibition installation",
-      "date": "2025",
-      "image": "/images/0_ai.jpg",
-      "shortDesc": "AI Exhibition installation",
-      "fullDesc": "An art installation held in UFO art gallery in Krakow, for Radim Koros PhD, powered by two different AI characters (openAI API) chatting with each other about art, using just one account. Savable chat history, modifiable personalities.",
-      "stack": ["openAI API", "Vanilla JS", "CSS"],
-      "url": "http://ufoart.gallery/"
-    },
-    {
-      "title": "Developer References",
-      "date": "2026",
-      "image": "/images/2_ref.jpg",
-      "shortDesc": "From Zero to Hero. Dev Cheatsheets",
-      "fullDesc": "Developer cheatsheets. From Vanilla.js to Next.js. React, TypeScript, Tailwind, and more. Will become public soon :)",
-      "stack": ["AI", "AI management", "HTML", "Design", "Vercel"],
-      "url": "https://references-action-point.vercel.app/"
-    },
-    {
       "title": "WebCKM",
       "date": "2016-2018",
       "image": "/images/3_webckm.jpg",
@@ -248,6 +221,33 @@
       "shortDesc": "Preact RODO panel",
       "fullDesc": "Developement of a GDPR consent management panel (TCF 2.0) for vendor selection and consent editing, deployed across multiple affiliated platforms, with ongoing adaptation to regulatory changes",
       "stack": ["Preact", "SCSS", "CI/CD", "Python"]
+    },
+    {
+      "title": "AI Exhibition installation",
+      "date": "2025",
+      "image": "/images/0_ai.jpg",
+      "shortDesc": "AI Exhibition installation",
+      "fullDesc": "An art installation held in UFO art gallery in Krakow, for Radim Koros PhD, powered by two different AI characters (openAI API) chatting with each other about art, using just one account. Savable chat history, modifiable personalities.",
+      "stack": ["openAI API", "Vanilla JS", "CSS"],
+      "url": "http://ufoart.gallery/"
+    },
+    {
+      "title": "Chaotec Portfolio",
+      "date": "2022",
+      "image": "/images/1_chaotec.jpg",
+      "shortDesc": "Previous Portfolio from Scratch",
+      "fullDesc": "Previous portfolio made from scratch, no AI assistance. Animated icons through scss only. Two color modes",
+      "stack": ["React 17", "SCSS"],
+      "url": "https://jamisu.github.io/my_portfolio/"
+    },
+    {
+      "title": "Developer References",
+      "date": "2026",
+      "image": "/images/2_ref.jpg",
+      "shortDesc": "From Zero to Hero. Dev Cheatsheets",
+      "fullDesc": "Developer cheatsheets. From Vanilla.js to Next.js. React, TypeScript, Tailwind, and more. Will become public soon :)",
+      "stack": ["AI", "AI management", "HTML", "Design", "Vercel"],
+      "url": "https://references-action-point.vercel.app/"
     },
     {
       "title": "History Museum Of Krakow",

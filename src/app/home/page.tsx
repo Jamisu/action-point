@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 const lines = [
   { text: 'Action Point', delay: 0, className: 'text-5xl md:text-7xl font-bold font-sans var(--c-heading) tracking-tight' },
-  { text: 'Front-End Engineer', delay: 150, className: 'text-xl md:text-2xl font-mono text-[var(--c-blue)] tracking-widest uppercase' },
-  { text: '15 years. Flash to Next.js.', delay: 300, className: 'text-base md:text-lg text-[var(--c-muted2)] font-mono' },
-  { text: 'I build things that work, look right,\nand make sense to humans.', delay: 450, className: 'text-base md:text-lg text-[var(--c-muted)]' },
+  { text: 'Senior Architect & UI Engineer', delay: 150, className: 'text-xl md:text-2xl font-mono text-[var(--c-blue)] tracking-widest uppercase' },
+  { text: '15 years from Flash to Next.js', delay: 300, className: 'text-base md:text-lg text-[var(--c-muted2)] font-mono' },
+  { text: 'Specializing in Next.js, AI integrations, and legacy migrations,\nI bridge the gap between complex logic and human UX', delay: 450, className: 'text-base md:text-lg text-[var(--c-muted)]' },
 ]
 
 interface HomeLine {

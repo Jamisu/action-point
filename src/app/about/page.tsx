@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useIntersectionObserver } from '@/lib/useIntersectionObserver'
 
-const aboutText = "Front-end engineer, 15+ years. Flash to React to Next.js — I've survived every paradigm shift and came out sharper. In recent year I worked independently on AI integration projects involving LLM APIs and model cost analysis. I hold a Master's in Psychology, which informs how I approach UX and team communication. I don't panic at legacy codebases; I bring a shovel and a flashlight. If you need someone who codes with precision, thinks in systems, and operates well beyond the ticket — we should talk."
+// const aboutText = "Front-end engineer, 15+ years. Flash to React to Next.js — I've survived every paradigm shift and came out sharper. In recent years I worked independently on AI integration projects involving LLM APIs and model cost analysis. I hold a Master's in Psychology, which informs how I approach UX and team communication. I don't panic at legacy codebases; I bring a shovel and a flashlight. If you need someone who codes with precision, thinks in systems, and operates well beyond the ticket — we should talk."
+const aboutText = "Senior Front-end Architect with 15+ years of experience. From the high-fidelity days of Flash to modern React and Next.js, I’ve mastered the evolution of the web. Recently, I’ve been building at the intersection of AI and efficiency, specializing in LLM integrations and model cost optimization. With a Master’s in Psychology, I bridge the gap between complex systems and human-centric UX. I don’t just clear tickets—I stabilize legacy codebases with a shovel and a flashlight. If you need precision, systems thinking, and a developer who truly owns the product—let’s talk.";
 
 interface TypeWriterProps {
   text: string
