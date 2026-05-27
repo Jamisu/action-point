@@ -2,10 +2,43 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Next.js: debug",
+      "name": "Next.js: Server-side",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "- Local:?\\s+(https?://localhost:\\d+)",
+        "uriFormat": "%s"
+      },
+      "env": {
+        "NODE_OPTIONS": "--inspect"
+      },
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "name": "Next.js: Client-side",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack://_N_E/*": "${workspaceFolder}/*",
+        "webpack:///./*": "${workspaceFolder}/*"
+      },
+      "presentation": {
+        "hidden": true
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Next.js: Full Stack",
+      "configurations": ["Next.js: Server-side", "Next.js: Client-side"]
     }
   ]
 }
