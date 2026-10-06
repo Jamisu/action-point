@@ -22,7 +22,7 @@ describe('About section', () => {
 
   it('does not render typewriter text before intersection', () => {
     render(<About />)
-    expect(screen.queryByText(/front-end engineer/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Front-end Architect/i)).not.toBeInTheDocument()
   })
 
   it('renders typewriter text after intersection', async () => {
@@ -33,7 +33,7 @@ describe('About section', () => {
     })
 
     await waitFor(
-      () => expect(screen.getByText(/front-end engineer/i)).toBeInTheDocument(),
+      () => expect(screen.getByText(/Front-end Architect/i)).toBeInTheDocument(),
       { timeout: 1000 }
     )
   })
