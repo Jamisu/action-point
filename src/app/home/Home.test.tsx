@@ -5,14 +5,14 @@ describe('Home section', () => {
   it('renders Home text content', () => {
     render(<Home />)
 
-    expect(screen.getByText('Front-End Engineer')).toBeInTheDocument()
-    expect(screen.getByText('15 years. Flash to Next.js.')).toBeInTheDocument()
+    expect(screen.getByText('Senior Architect & UI Engineer')).toBeInTheDocument()
+    expect(screen.getByText('15 years from Flash to Next.js')).toBeInTheDocument()
   })
 
   it('renders multi-line tagline', () => {
     render(<Home />)
 
-    expect(screen.getByText(/I build things that work/)).toBeInTheDocument()
+    expect(screen.getByText(/I bridge the gap between complex logic and human UX/)).toBeInTheDocument()
   })
 
   it('renders CTA buttons with correct links', () => {
